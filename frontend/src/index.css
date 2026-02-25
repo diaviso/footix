@@ -1,0 +1,566 @@
+@import "tailwindcss";
+
+/* Configure dark mode to use class selector */
+@variant dark (&:where(.dark, .dark *));
+
+/* ============================================
+   FOOTIX - BRAND COLOR SYSTEM
+   Primary: Gold (#D4AF37)
+   Accent: Silver (#C0C0C0)
+   ============================================ */
+
+@theme {
+  /* Static color definitions for Tailwind v4 */
+  /* Brand colors - Gold & Silver */
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-light: #E5C158;
+  --color-brand-gold-dark: #B8960F;
+  --color-brand-silver: #C0C0C0;
+  --color-brand-silver-light: #D8D8D8;
+  --color-brand-silver-dark: #A0A0A0;
+
+  /* Light mode colors */
+  --color-background: #FAFAFA;
+  --color-foreground: #1A1A1A;
+  --color-card: #ffffff;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1A1A1A;
+  --color-primary: #D4AF37;
+  --color-primary-foreground: #1A1A1A;
+  --color-secondary: #F5F5F5;
+  --color-secondary-foreground: #B8960F;
+  --color-muted: #F0F0F0;
+  --color-muted-foreground: #6B6B6B;
+  --color-accent: #F8F4E8;
+  --color-accent-foreground: #B8960F;
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: #ffffff;
+  --color-success: #16A34A;
+  --color-success-foreground: #ffffff;
+  --color-warning: #D4AF37;
+  --color-warning-foreground: #1A1A1A;
+  --color-border: #E5E5E5;
+  --color-input: #E5E5E5;
+  --color-ring: #D4AF37;
+  --radius: 0.75rem;
+
+  /* Sidebar colors */
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #6B6B6B;
+  --color-sidebar-accent: #F8F4E8;
+  --color-sidebar-border: #E5E5E5;
+}
+
+:root {
+  /* Light theme colors - Footix Brand */
+  --bg-color: #FAFAFA;
+  --fg-color: #1A1A1A;
+  --card-color: #ffffff;
+  --card-fg-color: #1A1A1A;
+  --popover-color: #ffffff;
+  --popover-fg-color: #1A1A1A;
+  --primary-color: #D4AF37;
+  --primary-fg-color: #1A1A1A;
+  --secondary-color: #F5F5F5;
+  --secondary-fg-color: #B8960F;
+  --muted-color: #F0F0F0;
+  --muted-fg-color: #6B6B6B;
+  --accent-color: #F8F4E8;
+  --accent-fg-color: #B8960F;
+  --destructive-color: #DC2626;
+  --destructive-fg-color: #ffffff;
+  --success-color: #16A34A;
+  --success-fg-color: #ffffff;
+  --warning-color: #D4AF37;
+  --warning-fg-color: #1A1A1A;
+  --border-color: #E5E5E5;
+  --input-color: #E5E5E5;
+  --ring-color: #D4AF37;
+
+  /* Brand specific - Gold & Silver */
+  --brand-gold: #D4AF37;
+  --brand-gold-light: #E5C158;
+  --brand-gold-dark: #B8960F;
+  --brand-silver: #C0C0C0;
+  --brand-silver-light: #D8D8D8;
+  --brand-silver-dark: #A0A0A0;
+
+  /* Sidebar specific - Light */
+  --sidebar-bg-color: #ffffff;
+  --sidebar-fg-color: #6B6B6B;
+  --sidebar-accent-color: #F8F4E8;
+  --sidebar-border-color: #E5E5E5;
+
+  /* Legacy variables for compatibility */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --primary: 45 65% 52%;
+  --primary-foreground: 0 0% 10%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 45 85% 39%;
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 42%;
+  --accent: 45 50% 94%;
+  --accent-foreground: 45 85% 39%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 71% 36%;
+  --success-foreground: 0 0% 100%;
+  --warning: 45 65% 52%;
+  --warning-foreground: 0 0% 10%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 45 65% 52%;
+}
+
+.dark {
+  /* Dark theme colors - Footix Brand */
+  --bg-color: #0F0F0F;
+  --fg-color: #F5F5F5;
+  --card-color: #1A1A1A;
+  --card-fg-color: #F5F5F5;
+  --popover-color: #1A1A1A;
+  --popover-fg-color: #F5F5F5;
+  --primary-color: #E5C158;
+  --primary-fg-color: #0F0F0F;
+  --secondary-color: #252525;
+  --secondary-fg-color: #E5C158;
+  --muted-color: #252525;
+  --muted-fg-color: #A0A0A0;
+  --accent-color: #2A2518;
+  --accent-fg-color: #E5C158;
+  --destructive-color: #EF4444;
+  --destructive-fg-color: #ffffff;
+  --success-color: #22C55E;
+  --success-fg-color: #ffffff;
+  --warning-color: #E5C158;
+  --warning-fg-color: #0F0F0F;
+  --border-color: #333333;
+  --input-color: #333333;
+  --ring-color: #E5C158;
+
+  /* Brand specific - Dark mode adjusted */
+  --brand-gold: #E5C158;
+  --brand-gold-light: #F0D070;
+  --brand-gold-dark: #D4AF37;
+  --brand-silver: #D8D8D8;
+  --brand-silver-light: #E8E8E8;
+  --brand-silver-dark: #C0C0C0;
+
+  /* Sidebar specific - Dark */
+  --sidebar-bg-color: #0A0A0A;
+  --sidebar-fg-color: #A0A0A0;
+  --sidebar-accent-color: #2A2518;
+  --sidebar-border-color: #333333;
+
+  /* Legacy variables for compatibility */
+  --background: 0 0% 6%;
+  --foreground: 0 0% 96%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 96%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 45 70% 63%;
+  --primary-foreground: 0 0% 6%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 45 70% 63%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 63%;
+  --accent: 45 30% 13%;
+  --accent-foreground: 45 70% 63%;
+  --destructive: 0 72% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 71% 45%;
+  --success-foreground: 0 0% 100%;
+  --warning: 45 70% 63%;
+  --warning-foreground: 0 0% 6%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 45 70% 63%;
+}
+
+* {
+  border-color: var(--border-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.dark .glass {
+  background-color: rgba(15, 15, 15, 0.85);
+  border-color: rgba(229, 193, 88, 0.15);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  box-shadow:
+    0 1px 2px rgba(212, 175, 55, 0.02),
+    0 4px 8px rgba(212, 175, 55, 0.04),
+    0 16px 32px rgba(212, 175, 55, 0.06);
+}
+
+.dark .glass-card {
+  background-color: rgba(26, 26, 26, 0.95);
+  border-color: rgba(229, 193, 88, 0.12);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Footix Brand Gradient System */
+.gradient-primary {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #B8960F 0%, #D4AF37 50%, #E5C158 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #B8960F 0%, #D4AF37 50%, #E5C158 100%);
+}
+
+.gradient-silver {
+  background: linear-gradient(135deg, #A0A0A0 0%, #C0C0C0 50%, #D8D8D8 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #16A34A 0%, #22C55E 100%);
+}
+
+.gradient-warning {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(192, 192, 192, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(229, 193, 88, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(184, 150, 15, 0.08) 0px, transparent 50%);
+}
+
+.dark .gradient-mesh {
+  background:
+    radial-gradient(at 0% 0%, rgba(229, 193, 88, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(216, 216, 216, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(240, 208, 112, 0.06) 0px, transparent 50%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #B8960F 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #A0A0A0 0%, #C0C0C0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 10px 20px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .card-hover:hover {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.25),
+    0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Card color utility class */
+.card-color {
+  background-color: #ffffff !important;
+}
+
+.dark .card-color {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* Force light mode card backgrounds */
+.light-card {
+  background-color: #ffffff !important;
+}
+
+.dark .light-card {
+  background-color: #18181b !important;
+}
+
+/* Override Tailwind bg-card class for proper dark mode support */
+/* In Tailwind v4, @theme values are static, so we need CSS overrides for runtime theming */
+.bg-card {
+  background-color: var(--card-color) !important;
+}
+
+.bg-background {
+  background-color: var(--bg-color) !important;
+}
+
+.bg-popover {
+  background-color: var(--popover-color) !important;
+}
+
+.bg-muted {
+  background-color: var(--muted-color) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-card-foreground {
+  color: var(--card-fg-color) !important;
+}
+
+.text-foreground {
+  color: var(--fg-color) !important;
+}
+
+.text-muted-foreground {
+  color: var(--muted-fg-color) !important;
+}
+
+.text-popover-foreground {
+  color: var(--popover-fg-color) !important;
+}
+
+.text-accent-foreground {
+  color: var(--accent-fg-color) !important;
+}
+
+.text-secondary-foreground {
+  color: var(--secondary-fg-color) !important;
+}
+
+.text-primary-foreground {
+  color: var(--primary-fg-color) !important;
+}
+
+.border-border {
+  border-color: var(--border-color) !important;
+}
+
+.border-input {
+  border-color: var(--input-color) !important;
+}
+
+.ring-ring {
+  --tw-ring-color: var(--ring-color) !important;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-color) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--muted-fg-color);
+  opacity: 0.3;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  opacity: 0.5;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px -10px var(--primary-color); }
+  to { box-shadow: 0 0 30px -5px var(--primary-color); }
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--muted-fg-color);
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.ProseMirror img.ProseMirror-selectednode {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.ProseMirror pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.875rem;
+}
+
+.ProseMirror code {
+  background-color: var(--muted-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.ProseMirror blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+  color: var(--muted-fg-color);
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+.ProseMirror mark {
+  background-color: #fef08a;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.dark .ProseMirror mark {
+  background-color: #854d0e;
+  color: #fef08a;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5rem;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+}
+
+.ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ProseMirror a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ProseMirror a:hover {
+  opacity: 0.8;
+}

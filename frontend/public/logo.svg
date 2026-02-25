@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Gold gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B8960F"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#E5C158"/>
+    </linearGradient>
+    <!-- Silver gradient -->
+    <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A0A0A0"/>
+      <stop offset="50%" style="stop-color:#C0C0C0"/>
+      <stop offset="100%" style="stop-color:#D8D8D8"/>
+    </linearGradient>
+    <!-- Dark background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#2D2D2D"/>
+    </linearGradient>
+    <!-- Shine effect -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0)"/>
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0.3)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)" stroke="url(#goldGradient)" stroke-width="3"/>
+  
+  <!-- Football/Soccer ball -->
+  <circle cx="100" cy="85" r="45" fill="url(#silverGradient)" stroke="url(#goldGradient)" stroke-width="2"/>
+  
+  <!-- Pentagon pattern on ball -->
+  <path d="M100 55 L115 70 L110 88 L90 88 L85 70 Z" fill="url(#bgGradient)" stroke="#1A1A1A" stroke-width="1"/>
+  <path d="M130 85 L120 70 L130 60 L145 75 L140 90 Z" fill="url(#bgGradient)" stroke="#1A1A1A" stroke-width="1"/>
+  <path d="M70 85 L80 70 L70 60 L55 75 L60 90 Z" fill="url(#bgGradient)" stroke="#1A1A1A" stroke-width="1"/>
+  <path d="M85 105 L90 90 L75 85 L60 95 L70 110 Z" fill="url(#bgGradient)" stroke="#1A1A1A" stroke-width="1"/>
+  <path d="M115 105 L110 90 L125 85 L140 95 L130 110 Z" fill="url(#bgGradient)" stroke="#1A1A1A" stroke-width="1"/>
+  
+  <!-- FOOTIX text -->
+  <text x="100" y="160" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="bold" fill="url(#goldGradient)">FOOTIX</text>
+  
+  <!-- Decorative stars -->
+  <polygon points="30,50 33,58 42,58 35,63 38,72 30,67 22,72 25,63 18,58 27,58" fill="url(#goldGradient)"/>
+  <polygon points="170,50 173,58 182,58 175,63 178,72 170,67 162,72 165,63 158,58 167,58" fill="url(#goldGradient)"/>
+  
+  <!-- Shine overlay -->
+  <ellipse cx="80" cy="65" rx="20" ry="10" fill="url(#shine)" opacity="0.5"/>
+</svg>
