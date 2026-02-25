@@ -34,6 +34,6 @@ async function bootstrap() {
   // Start - Railway uses PORT env variable
   const port = process.env.PORT || 3000;
   await app.listen(port, '0.0.0.0');
-  console.log(`🚀 DEC API running on port ${port}`);
+  console.log(`🚀 Footix API running on port ${port}`);
 }
 bootstrap();

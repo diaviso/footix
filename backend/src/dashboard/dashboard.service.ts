@@ -6,11 +6,9 @@ export class DashboardService {
   constructor(private prisma: PrismaService) {}
 
   async getStats(userId?: string) {
-    const [themesCount, quizzesCount, blogsCount, forumCount] = await Promise.all([
+    const [themesCount, quizzesCount] = await Promise.all([
       this.prisma.theme.count({ where: { isActive: true } }),
       this.prisma.quiz.count({ where: { isActive: true } }),
-      this.prisma.article.count({ where: { published: true } }),
-      this.prisma.forumTopic.count(),
     ]);
 
     let userQuizAttempts = 0;
@@ -23,86 +21,32 @@ export class DashboardService {
     return {
       themes: themesCount,
       quizzes: quizzesCount,
-      blogs: blogsCount,
-      discussions: forumCount,
       userQuizAttempts,
     };
   }
 
   async getUserActivity(userId: string) {
-    const [recentQuizzes, recentBlogs, recentForumPosts] = await Promise.all([
-      this.prisma.quizAttempt.findMany({
-        where: { userId },
-        take: 5,
-        orderBy: { completedAt: 'desc' },
-        include: {
-          quiz: {
-            select: {
-              title: true,
-            },
+    const recentQuizzes = await this.prisma.quizAttempt.findMany({
+      where: { userId },
+      take: 10,
+      orderBy: { completedAt: 'desc' },
+      include: {
+        quiz: {
+          select: {
+            title: true,
           },
         },
-      }),
-      this.prisma.article.findMany({
-        where: { published: true },
-        take: 3,
-        orderBy: { createdAt: 'desc' },
-        select: {
-          title: true,
-          createdAt: true,
-        },
-      }),
-      this.prisma.forumTopic.findMany({
-        where: { authorId: userId },
-        take: 3,
-        orderBy: { createdAt: 'desc' },
-        select: {
-          title: true,
-          createdAt: true,
-        },
-      }),
-    ]);
-
-    const activities: Array<{
-      type: string;
-      title: string;
-      time: string;
-      score?: string;
-      timestamp: Date;
-    }> = [];
-
-    recentQuizzes.forEach((attempt) => {
-      activities.push({
-        type: 'quiz',
-        title: attempt.quiz.title,
-        time: this.getRelativeTime(attempt.completedAt),
-        score: `${attempt.score}%`,
-        timestamp: attempt.completedAt,
-      });
+      },
     });
 
-    recentBlogs.forEach((blog) => {
-      activities.push({
-        type: 'article',
-        title: blog.title,
-        time: this.getRelativeTime(blog.createdAt),
-        timestamp: blog.createdAt,
-      });
-    });
+    const activities = recentQuizzes.map((attempt) => ({
+      type: 'quiz',
+      title: attempt.quiz.title,
+      time: this.getRelativeTime(attempt.completedAt),
+      score: `${attempt.score}%`,
+    }));
 
-    recentForumPosts.forEach((post) => {
-      activities.push({
-        type: 'forum',
-        title: post.title,
-        time: this.getRelativeTime(post.createdAt),
-        timestamp: post.createdAt,
-      });
-    });
-
-    return activities
-      .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
-      .slice(0, 5)
-      .map(({ timestamp, ...rest }) => rest);
+    return activities.slice(0, 5);
   }
 
   async getUserProgress(userId: string) {
@@ -138,24 +82,9 @@ export class DashboardService {
       ? Math.round((uniqueQuizzesAttempted.length / totalQuizzes) * 100) 
       : 0;
 
-    const blogReads = await this.prisma.article.count({
-      where: { published: true },
-    });
-
-    const forumParticipation = await this.prisma.forumTopic.count({
-      where: { authorId: userId },
-    });
-
-    const totalForumPosts = await this.prisma.forumTopic.count();
-    const forumParticipationRate = totalForumPosts > 0 
-      ? Math.round((forumParticipation / totalForumPosts) * 100) 
-      : 0;
-
     return {
       quizSuccessRate,
       quizCompletionRate,
-      blogReadRate: Math.min(blogReads > 0 ? Math.round((blogReads / 10) * 100) : 0, 100),
-      forumParticipationRate: Math.min(forumParticipationRate, 100),
     };
   }
 
@@ -199,18 +128,12 @@ export class DashboardService {
       totalUsers,
       totalQuizzes,
       totalAttempts,
-      totalArticles,
-      totalTopics,
-      totalComments,
       recentUsers,
       attemptsByDay,
     ] = await Promise.all([
       this.prisma.user.count({ where: { role: 'USER' } }),
       this.prisma.quiz.count(),
       this.prisma.quizAttempt.count(),
-      this.prisma.article.count({ where: { published: true } }),
-      this.prisma.forumTopic.count(),
-      this.prisma.forumComment.count(),
       this.prisma.user.findMany({
         where: { role: 'USER' },
         orderBy: { createdAt: 'desc' },
@@ -247,9 +170,6 @@ export class DashboardService {
       totalUsers,
       totalQuizzes,
       totalAttempts,
-      totalArticles,
-      totalTopics,
-      totalComments,
       globalSuccessRate,
       recentUsers,
       topUsers,

@@ -8,7 +8,6 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 import { GoogleStrategy } from './strategies/google.strategy';
 import { MailModule } from '../mail/mail.module';
 import { UploadModule } from '../upload/upload.module';
-import { StripeModule } from '../stripe/stripe.module';
 
 @Module({
   imports: [
@@ -22,7 +21,6 @@ import { StripeModule } from '../stripe/stripe.module';
     }),
     MailModule,
     UploadModule,
-    StripeModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy, GoogleStrategy],

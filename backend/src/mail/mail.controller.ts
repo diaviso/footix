@@ -30,13 +30,9 @@ export class MailController {
   async getRecipientCounts() {
     const baseWhere = { isEmailVerified: true, emailNotifications: true };
 
-    const [all, premium, free] = await Promise.all([
-      this.prisma.user.count({ where: baseWhere }),
-      this.prisma.user.count({ where: { ...baseWhere, isPremium: true } }),
-      this.prisma.user.count({ where: { ...baseWhere, isPremium: false } }),
-    ]);
+    const all = await this.prisma.user.count({ where: baseWhere });
 
-    return { all, premium, free };
+    return { all, premium: 0, free: all };
   }
 
   /**
@@ -75,7 +71,6 @@ export class MailController {
           email: true,
           firstName: true,
           lastName: true,
-          isPremium: true,
           role: true,
           createdAt: true,
           emailNotifications: true,
@@ -105,11 +100,7 @@ export class MailController {
     if (sendBulkEmailDto.recipientCategory) {
       // Category-based sending
       const baseWhere: any = { isEmailVerified: true, emailNotifications: true };
-      if (sendBulkEmailDto.recipientCategory === 'premium') {
-        baseWhere.isPremium = true;
-      } else if (sendBulkEmailDto.recipientCategory === 'free') {
-        baseWhere.isPremium = false;
-      }
+      // Premium categories removed - all users are treated equally
       const users = await this.prisma.user.findMany({
         where: baseWhere,
         select: { email: true },

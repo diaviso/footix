@@ -4,8 +4,6 @@ import {
   LayoutDashboard,
   BookOpen,
   HelpCircle,
-  FileText,
-  MessageSquare,
   Users,
   Settings,
   ChevronLeft,
@@ -13,16 +11,11 @@ import {
   User,
   Trophy,
   History,
-  Bot,
-  Database,
-  FolderOpen,
-  Crown,
   X,
   Sparkles,
   Mail,
   LifeBuoy,
   ScrollText,
-  MessageSquarePlus,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useThemeStore } from '@/store/theme';
@@ -37,14 +30,9 @@ const userMainMenuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
   { icon: BookOpen, label: 'Thèmes', path: '/themes' },
   { icon: HelpCircle, label: 'Quiz', path: '/quizzes' },
-  { icon: Sparkles, label: 'Réviser la DEC', path: '/revision', premiumOnly: true },
+  { icon: Sparkles, label: 'Révision', path: '/revision' },
   { icon: History, label: 'Historique', path: '/history' },
   { icon: Trophy, label: 'Classement', path: '/leaderboard' },
-  { icon: FileText, label: 'Blog', path: '/blog' },
-  { icon: MessageSquare, label: 'Forum', path: '/forum' },
-  { icon: Bot, label: 'Assistant DEC', path: '/chatbot' },
-  { icon: Crown, label: 'Premium', path: '/premium' },
-  { icon: MessageSquarePlus, label: 'Vos retours', path: '/feedback' },
 ];
 
 // Menu items for admins
@@ -53,16 +41,8 @@ const adminMainMenuItems = [
   { icon: BookOpen, label: 'Thèmes', path: '/themes' },
   { icon: HelpCircle, label: 'Quiz', path: '/quizzes' },
   { icon: Trophy, label: 'Classement', path: '/leaderboard' },
-  { icon: FileText, label: 'Blog', path: '/blog' },
-  { icon: MessageSquare, label: 'Forum', path: '/forum' },
-  { icon: FolderOpen, label: 'Catégories Forum', path: '/forum/categories' },
   { icon: Users, label: 'Utilisateurs', path: '/users' },
-  { icon: Database, label: 'Base RAG', path: '/documents' },
-  { icon: Bot, label: 'Assistant DEC', path: '/chatbot' },
-  { icon: Bot, label: 'Thématiques Chatbot', path: '/admin/chatbot-topics' },
-  { icon: Crown, label: 'Abonnements', path: '/admin/subscriptions' },
   { icon: Mail, label: 'Envoyer Email', path: '/admin/email' },
-  { icon: MessageSquarePlus, label: 'Retours', path: '/admin/feedback' },
 ];
 
 const userAccountMenuItems = [
@@ -81,18 +61,8 @@ export function Sidebar() {
   const { user } = useAuthStore();
   const isAdmin = user?.role === 'ADMIN';
 
-  const isPremium = user?.isPremium || false;
-
-  // Filter user menu items based on premium status
-  const filteredUserMenuItems = userMainMenuItems.filter(item => {
-    if ((item as { premiumOnly?: boolean }).premiumOnly) {
-      return isPremium; // Only show premium-only features for premium users
-    }
-    return true;
-  });
-
   // Select menu items based on role
-  const menuItems = isAdmin ? adminMainMenuItems : filteredUserMenuItems;
+  const menuItems = isAdmin ? adminMainMenuItems : userMainMenuItems;
 
   const NavItem = ({ item, isActive }: { item: typeof menuItems[0]; isActive: boolean }) => {
     const Icon = item.icon;

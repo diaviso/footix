@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, BadRequestException, ForbiddenException, Logger, Inject, forwardRef } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException, ForbiddenException, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateQuizDto } from './dto/create-quiz.dto';
@@ -12,7 +12,6 @@ import { AnalyzeQuestionDto, AnalysisResult } from './dto/analyze-question.dto';
 import { GenerateQuestionsDto } from './dto/generate-questions.dto';
 import { ChatOpenAI } from '@langchain/openai';
 import { HumanMessage, SystemMessage } from '@langchain/core/messages';
-import { RagService } from '../documents/rag.service';
 
 // Cost in stars to purchase an extra attempt
 const EXTRA_ATTEMPT_COST = 10;
@@ -25,8 +24,6 @@ export class QuizzesService {
   constructor(
     private prisma: PrismaService,
     private configService: ConfigService,
-    @Inject(forwardRef(() => RagService))
-    private ragService: RagService,
   ) {
     const apiKey = this.configService.get<string>('OPENAI_API_KEY');
     if (apiKey) {
@@ -393,23 +390,11 @@ export class QuizzesService {
     // Check if user has enough stars to unlock this quiz
     const user = await this.prisma.user.findUnique({
       where: { id: userId },
-      select: { stars: true, isPremium: true, premiumExpiresAt: true },
+      select: { stars: true },
     });
 
     if (!user) {
       throw new NotFoundException('User not found');
-    }
-
-    // Check premium access for non-free quizzes
-    if (!quiz.isFree) {
-      const isPremiumValid = user.isPremium && 
-        (!user.premiumExpiresAt || user.premiumExpiresAt > new Date());
-      
-      if (!isPremiumValid) {
-        throw new ForbiddenException(
-          'Ce quiz est réservé aux membres Premium. Souscrivez à un abonnement pour y accéder.'
-        );
-      }
     }
 
     if (quiz.requiredStars > 0 && user.stars < quiz.requiredStars) {
@@ -740,16 +725,8 @@ export class QuizzesService {
     const difficulty = generateQuizDto.difficulty || 'MOYEN';
     const numberOfQuestions = generateQuizDto.numberOfQuestions || 5;
 
-    // Get relevant context from documents for quiz generation
-    let ragContext = '';
-    try {
-      ragContext = await this.ragService.getRelevantContext(
-        `${theme.title} ${theme.description || ''} quiz questions`,
-        5,
-      );
-    } catch (ragError) {
-      this.logger.warn('RAG context retrieval failed for quiz generation:', ragError);
-    }
+    // RAG context disabled (documents module removed)
+    const ragContext = '';
 
     const userInstructions = generateQuizDto.instructions?.trim();
 
@@ -1035,19 +1012,8 @@ Règles :
       ? quiz.questions.map((q, i) => `${i + 1}. ${q.content}`).join('\n')
       : 'Aucune question existante.';
 
-    // Get RAG context if available
-    let ragContext = '';
-    try {
-      const relevantContext = await this.ragService.getRelevantContext(
-        `Questions sur ${quiz.theme?.title || quiz.title} pour le DEC et la déontologie comptable`,
-        3
-      );
-      if (relevantContext) {
-        ragContext = `\n\nContexte de référence (documents):\n${relevantContext}`;
-      }
-    } catch {
-      this.logger.warn('Impossible de récupérer le contexte RAG');
-    }
+    // RAG context disabled (documents module removed)
+    const ragContext = '';
 
     // Use quiz difficulty for questions
     const quizDifficulty = quiz.difficulty;
@@ -1169,16 +1135,6 @@ IMPORTANT: Chaque option DOIT avoir une explication (explanation) qui explique p
    * Only for premium users, no history saved, no stars earned
    */
   async getRandomRevisionQuiz(userId: string) {
-    // Check if user is premium
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-      select: { isPremium: true },
-    });
-
-    if (!user?.isPremium) {
-      throw new ForbiddenException('Cette fonctionnalité est réservée aux utilisateurs premium');
-    }
-
     // Get 10 random questions from the database
     const allQuestions = await this.prisma.question.findMany({
       include: {
@@ -1210,7 +1166,7 @@ IMPORTANT: Chaque option DOIT avoir une explication (explanation) qui explique p
     return {
       id: 'revision-' + Date.now(),
       title: 'Quiz de Révision',
-      description: 'Quiz aléatoire pour réviser la DEC - 10 questions variées',
+      description: 'Quiz aléatoire de révision - 10 questions variées',
       difficulty: 'MEDIUM',
       timeLimit: 5, // 5 minutes
       passingScore: 70,
@@ -1236,16 +1192,6 @@ IMPORTANT: Chaque option DOIT avoir une explication (explanation) qui explique p
    * No history saved, no stars earned
    */
   async submitRevisionQuiz(userId: string, answers: Record<string, string[]>) {
-    // Check if user is premium
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-      select: { isPremium: true },
-    });
-
-    if (!user?.isPremium) {
-      throw new ForbiddenException('Cette fonctionnalité est réservée aux utilisateurs premium');
-    }
-
     const questionIds = Object.keys(answers);
     
     // Get all questions with their options

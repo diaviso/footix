@@ -20,33 +20,33 @@ export class MailService {
   async sendVerificationEmail(to: string, code: string) {
     await this.mailerService.sendMail({
       to,
-      subject: '🔐 Vérification de votre email - DEC Learning',
+      subject: '🔐 Vérification de votre email - Footix',
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); padding: 32px 20px; text-align: center;">
-            <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">DEC Learning</h1>
+            <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">Footix</h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 6px 0 0 0;">Préparation au Diplôme d'Expertise Comptable</p>
           </div>
           <!-- Body -->
           <div style="padding: 36px 32px;">
             <h2 style="color: #1B5E3D; font-size: 22px; margin: 0 0 16px 0;">Vérification de votre adresse email</h2>
             <p style="color: #4b5563; font-size: 15px; line-height: 1.6; margin: 0 0 24px 0;">
-              Bienvenue sur DEC Learning ! Pour finaliser votre inscription, veuillez utiliser le code de vérification ci-dessous :
+              Bienvenue sur Footix ! Pour finaliser votre inscription, veuillez utiliser le code de vérification ci-dessous :
             </p>
             <div style="background-color: #f0f7f3; padding: 24px; text-align: center; border-radius: 8px; margin: 24px 0; border: 1px solid #d4e8dc;">
               <span style="font-size: 36px; font-weight: bold; color: #1B5E3D; letter-spacing: 6px;">${code}</span>
             </div>
             <div style="background-color: #f0f7f3; border-left: 4px solid #D4A843; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 24px 0;">
               <p style="color: #5A7265; font-size: 13px; margin: 0;">
-                ⏱ Ce code expire dans <strong>1 heure</strong>. Si vous n'avez pas créé de compte sur DEC Learning, ignorez cet email.
+                ⏱ Ce code expire dans <strong>1 heure</strong>. Si vous n'avez pas créé de compte sur Footix, ignorez cet email.
               </p>
             </div>
           </div>
           <!-- Footer -->
           <div style="background-color: #f8faf9; padding: 20px 32px; border-top: 1px solid #e8efe9;">
             <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 0;">
-              © ${new Date().getFullYear()} DEC Learning - Préparation au Diplôme d'Expertise Comptable
+              © ${new Date().getFullYear()} Footix - Préparation au Diplôme d'Expertise Comptable
             </p>
           </div>
         </div>
@@ -57,12 +57,12 @@ export class MailService {
   async sendPasswordResetEmail(to: string, resetLink: string) {
     await this.mailerService.sendMail({
       to,
-      subject: '🔑 Réinitialisation de votre mot de passe - DEC Learning',
+      subject: '🔑 Réinitialisation de votre mot de passe - Footix',
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); padding: 32px 20px; text-align: center;">
-            <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">DEC Learning</h1>
+            <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">Footix</h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 6px 0 0 0;">Préparation au Diplôme d'Expertise Comptable</p>
           </div>
           <!-- Body -->
@@ -89,7 +89,7 @@ export class MailService {
           <!-- Footer -->
           <div style="background-color: #f8faf9; padding: 20px 32px; border-top: 1px solid #e8efe9;">
             <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 0;">
-              © ${new Date().getFullYear()} DEC Learning - Préparation au Diplôme d'Expertise Comptable
+              © ${new Date().getFullYear()} Footix - Préparation au Diplôme d'Expertise Comptable
             </p>
           </div>
         </div>
@@ -115,7 +115,7 @@ export class MailService {
     const signatureBlock = signatureImageUrl
       ? `
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-          <img src="${signatureImageUrl}" alt="Signature DEC Learning" style="max-width: 100%; height: auto; display: block;" />
+          <img src="${signatureImageUrl}" alt="Signature Footix" style="max-width: 100%; height: auto; display: block;" />
         </div>
       `
       : '';
@@ -124,7 +124,7 @@ export class MailService {
     const wrappedHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #1B5E3D; margin: 0;">DEC Learning</h1>
+          <h1 style="color: #1B5E3D; margin: 0;">Footix</h1>
           <p style="color: #6b7280; font-size: 14px; margin-top: 5px;">Préparation au Diplôme d'Expertise Comptable</p>
         </div>
         <div style="color: #1f2937; font-size: 16px; line-height: 1.6;">
@@ -133,10 +133,10 @@ export class MailService {
         ${signatureBlock}
         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0 20px 0;">
         <p style="color: #9ca3af; font-size: 12px; text-align: center;">
-          © ${new Date().getFullYear()} DEC Learning - Tous droits réservés
+          © ${new Date().getFullYear()} Footix - Tous droits réservés
         </p>
         <p style="color: #9ca3af; font-size: 11px; text-align: center;">
-          Vous recevez cet email car vous êtes inscrit sur DEC Learning.
+          Vous recevez cet email car vous êtes inscrit sur Footix.
         </p>
       </div>
     `;
@@ -169,19 +169,19 @@ export class MailService {
   ) {
     await this.mailerService.sendMail({
       to,
-      subject: `💬 Réponse à votre ${feedbackType.toLowerCase()} - DEC Learning`,
+      subject: `💬 Réponse à votre ${feedbackType.toLowerCase()} - Footix`,
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); padding: 32px 20px; text-align: center;">
-            <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">DEC Learning</h1>
+            <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">Footix</h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 6px 0 0 0;">Préparation au Diplôme d'Expertise Comptable</p>
           </div>
           <!-- Body -->
           <div style="padding: 36px 32px;">
             <h2 style="color: #1B5E3D; font-size: 22px; margin: 0 0 16px 0;">Bonjour ${firstName},</h2>
             <p style="color: #4b5563; font-size: 15px; line-height: 1.6; margin: 0 0 24px 0;">
-              L'équipe DEC Learning a répondu à votre <strong>${feedbackType.toLowerCase()}</strong>.
+              L'équipe Footix a répondu à votre <strong>${feedbackType.toLowerCase()}</strong>.
             </p>
 
             <!-- Original message -->
@@ -198,14 +198,14 @@ export class MailService {
 
             <div style="background-color: #f0f7f3; border-left: 4px solid #D4A843; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 24px 0;">
               <p style="color: #5A7265; font-size: 13px; margin: 0;">
-                Merci pour votre retour ! Votre avis nous aide à améliorer DEC Learning.
+                Merci pour votre retour ! Votre avis nous aide à améliorer Footix.
               </p>
             </div>
           </div>
           <!-- Footer -->
           <div style="background-color: #f8faf9; padding: 20px 32px; border-top: 1px solid #e8efe9;">
             <p style="color: #9ca3af; font-size: 12px; text-align: center; margin: 0;">
-              © ${new Date().getFullYear()} DEC Learning - Préparation au Diplôme d'Expertise Comptable
+              © ${new Date().getFullYear()} Footix - Préparation au Diplôme d'Expertise Comptable
             </p>
           </div>
         </div>

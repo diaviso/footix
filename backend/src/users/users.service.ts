@@ -214,11 +214,6 @@ export class UsersService {
         googleId: true,
         stars: true,
         showInLeaderboard: true,
-        isPremium: true,
-        premiumExpiresAt: true,
-        autoRenew: true,
-        stripeCustomerId: true,
-        stripeSubscriptionId: true,
         emailNotifications: true,
         pushNotifications: true,
         marketingEmails: true,
@@ -235,14 +230,6 @@ export class UsersService {
     const [
       quizAttempts,
       quizAttemptCount,
-      forumTopics,
-      forumTopicCount,
-      forumCommentCount,
-      blogCommentCount,
-      payments,
-      chatConversationCount,
-      feedbacks,
-      feedbackCount,
     ] = await Promise.all([
       this.prisma.quizAttempt.findMany({
         where: { userId: id },
@@ -255,29 +242,6 @@ export class UsersService {
         },
       }),
       this.prisma.quizAttempt.count({ where: { userId: id } }),
-      this.prisma.forumTopic.findMany({
-        where: { authorId: id },
-        orderBy: { createdAt: 'desc' },
-        take: 10,
-        select: { id: true, title: true, status: true, createdAt: true },
-      }),
-      this.prisma.forumTopic.count({ where: { authorId: id } }),
-      this.prisma.forumComment.count({ where: { userId: id } }),
-      this.prisma.comment.count({ where: { userId: id } }),
-      this.prisma.payment.findMany({
-        where: { userId: id },
-        orderBy: { createdAt: 'desc' },
-        take: 10,
-        select: { id: true, amount: true, currency: true, status: true, description: true, createdAt: true },
-      }),
-      this.prisma.chatConversation.count({ where: { userId: id } }),
-      this.prisma.feedback.findMany({
-        where: { userId: id },
-        orderBy: { createdAt: 'desc' },
-        take: 10,
-        select: { id: true, type: true, subject: true, status: true, createdAt: true },
-      }),
-      this.prisma.feedback.count({ where: { userId: id } }),
     ]);
 
     // Compute quiz stats
@@ -301,14 +265,6 @@ export class UsersService {
         quizAttemptCount,
         avgScore,
         bestScore,
-        forumTopics,
-        forumTopicCount,
-        forumCommentCount,
-        blogCommentCount,
-        payments,
-        chatConversationCount,
-        feedbacks,
-        feedbackCount,
       },
     };
   }

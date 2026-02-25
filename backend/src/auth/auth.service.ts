@@ -12,7 +12,6 @@ import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
 import { randomBytes, randomUUID } from 'crypto';
-import { StripeService } from '../stripe/stripe.service';
 
 @Injectable()
 export class AuthService {
@@ -21,7 +20,6 @@ export class AuthService {
     private jwtService: JwtService,
     private mailService: MailService,
     private configService: ConfigService,
-    private stripeService: StripeService,
   ) {}
 
   async register(registerDto: RegisterDto) {
@@ -619,9 +617,6 @@ export class AuthService {
     if (!user) {
       throw new NotFoundException('Utilisateur non trouvé');
     }
-
-    // Cancel any active Stripe subscription immediately
-    await this.stripeService.forceCancel(userId);
 
     // Delete the user — all related data will be cascade-deleted by Prisma
     await this.prisma.user.delete({ where: { id: userId } });

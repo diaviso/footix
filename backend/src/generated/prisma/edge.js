@@ -258,7 +258,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "e:\\footix\\backend\\src\\generated\\prisma",
+      "value": "E:\\footix\\backend\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -272,7 +272,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "e:\\footix\\backend\\prisma\\schema.prisma",
+    "sourceFilePath": "E:\\footix\\backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
