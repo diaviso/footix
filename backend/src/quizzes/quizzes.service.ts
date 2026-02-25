@@ -730,17 +730,17 @@ export class QuizzesService {
 
     const userInstructions = generateQuizDto.instructions?.trim();
 
-    const systemPrompt = `Tu es un expert en création de quiz éducatifs sur la déontologie de la profession comptable et le Diplôme d'Expertise Comptable (DEC).
+    const systemPrompt = `Tu es un expert en football et en création de quiz sportifs.
+Tu possèdes une connaissance approfondie de l'histoire du football, des compétitions internationales (Coupe du Monde, Euro, Ligue des Champions, etc.), des clubs, des joueurs légendaires et actuels, des règles du jeu, des tactiques et des records.
 Tu dois générer un quiz au format JSON strict.
 
-IMPORTANT: Ta réponse doit être UNIQUEMENT du JSON valide, sans texte avant ou après.
-${ragContext ? '\nUtilise les informations suivantes issues des documents de référence pour créer des questions précises et pertinentes:\n' + ragContext : ''}`;
+IMPORTANT: Ta réponse doit être UNIQUEMENT du JSON valide, sans texte avant ou après.`;
 
     const userPrompt = `Génère un quiz sur le thème "${theme.title}" avec les paramètres suivants:
 - Difficulté: ${difficulty}
 - Nombre de questions: ${numberOfQuestions}
 ${userInstructions ? `\nInstruction supplémentaire de l'utilisateur : "${userInstructions}"\nPrends en compte cette directive dans la génération des questions.\n` : ''}
-Le quiz doit être pertinent pour la préparation au DEC et la déontologie comptable.
+Le quiz doit être pertinent et porter sur le football (histoire, compétitions, joueurs, clubs, règles, tactiques, records, etc.).
 
 Retourne UNIQUEMENT un objet JSON avec cette structure exacte:
 {
@@ -766,9 +766,9 @@ Règles IMPORTANTES pour varier les questions :
 - Pour les questions Oui/Non, les options sont : [{"content": "Oui", ...}, {"content": "Non", ...}]
 - Pour QCU: exactement 1 option avec isCorrect: true
 - Pour QCM: au moins 2 options avec isCorrect: true
-- Les questions doivent être variées en formulation : affirmations à valider, cas pratiques, définitions, mises en situation, etc.
+- Les questions doivent être variées en formulation : affirmations à valider, questions sur des faits historiques, des records, des compétitions, des joueurs, des clubs, des règles, etc.
 - Chaque option DOIT avoir une explication (explanation) qui explique pourquoi la réponse est correcte ou incorrecte
-- Difficulté ${difficulty}: ${difficulty === 'FACILE' ? 'questions basiques de compréhension' : difficulty === 'MOYEN' ? 'questions nécessitant une bonne connaissance du sujet' : 'questions complexes nécessitant une expertise approfondie'}`;
+- Difficulté ${difficulty}: ${difficulty === 'FACILE' ? 'questions de culture générale football accessibles à tous' : difficulty === 'MOYEN' ? 'questions nécessitant une bonne connaissance du football' : 'questions pointues pour les vrais experts du football'}`;
 
     try {
       const response = await this.chatModel.invoke([
@@ -1025,8 +1025,9 @@ Règles :
         ? '(Question à Choix Unique) : exactement UNE seule bonne réponse parmi 4 options'
         : '(Question à Choix Multiple) : PLUSIEURS bonnes réponses parmi 4 options';
 
-    const systemPrompt = `Tu es un expert en création de questions de quiz pour la préparation au DEC (Diplôme d'Expertise Comptable) et la déontologie comptable.
-Tu dois générer des questions de qualité professionnelle, précises et pédagogiques.
+    const systemPrompt = `Tu es un expert en football et en création de quiz sportifs.
+Tu possèdes une connaissance approfondie de l'histoire du football, des compétitions, des clubs, des joueurs, des règles et des tactiques.
+Tu dois générer des questions de qualité, précises et intéressantes.
 
 IMPORTANT: Ta réponse doit être UNIQUEMENT du JSON valide, sans texte avant ou après.`;
 
@@ -1044,11 +1045,11 @@ ${ragContext}
 Règles :
 - Type de questions : ${typeInstruction}
 - Difficulté ${quizDifficulty} : ${
-  quizDifficulty === 'FACILE' ? 'questions de base, concepts fondamentaux' :
-  quizDifficulty === 'MOYEN' ? 'questions intermédiaires, application pratique' :
-  'questions avancées, cas complexes, analyse approfondie'
+  quizDifficulty === 'FACILE' ? 'questions de culture générale football accessibles à tous' :
+  quizDifficulty === 'MOYEN' ? 'questions nécessitant une bonne connaissance du football' :
+  'questions pointues pour les vrais experts du football'
 }
-- Les questions doivent être pertinentes pour le DEC et la déontologie comptable
+- Les questions doivent porter sur le football (histoire, compétitions, joueurs, clubs, règles, tactiques, records)
 - Évite les questions trop similaires aux questions existantes
 - Chaque question doit avoir exactement 4 options
 

@@ -117,7 +117,7 @@ export function UserDashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B5E3D] dark:border-[#3D9A6A] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37] dark:border-[#C0C0C0] mx-auto"></div>
           <p className="mt-4 text-[#5A7265] dark:text-[#8BA898]">Chargement...</p>
         </div>
       </div>
@@ -138,7 +138,7 @@ export function UserDashboardPage() {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#1B5E3D] via-[#144832] to-[#0D3321] p-8 text-white"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#D4AF37] via-[#A89030] to-[#0D3321] p-8 text-white"
       >
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="relative z-10">
@@ -206,12 +206,12 @@ export function UserDashboardPage() {
                     sur {stats?.totalQuizzes || 0} disponibles
                   </p>
                 </div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1B5E3D] shadow-lg">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#D4AF37] shadow-lg">
                   <HelpCircle className="h-7 w-7 text-white" />
                 </div>
               </div>
             </CardContent>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#1B5E3D]" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4AF37]" />
           </Card>
         </motion.div>
 
@@ -222,16 +222,16 @@ export function UserDashboardPage() {
                 <div>
                   <p className="text-sm font-medium text-[#5A7265] dark:text-[#8BA898]">Taux de réussite</p>
                   <p className="text-3xl font-bold mt-1 text-[#1A2E23] dark:text-[#E8F0EC]">{successRate}%</p>
-                  <p className="text-xs text-[#1B5E3D] dark:text-[#3D9A6A] mt-1">
+                  <p className="text-xs text-[#D4AF37] dark:text-[#C0C0C0] mt-1">
                     {stats?.quizzesPassed || 0} quiz réussis
                   </p>
                 </div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2D7A50] shadow-lg">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#B8960F] shadow-lg">
                   <TrendingUp className="h-7 w-7 text-white" />
                 </div>
               </div>
             </CardContent>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#2D7A50]" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#B8960F]" />
           </Card>
         </motion.div>
 
@@ -246,12 +246,12 @@ export function UserDashboardPage() {
                     sur {stats?.totalAttempts || 0} tentatives
                   </p>
                 </div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3D9A6A] shadow-lg">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#C0C0C0] shadow-lg">
                   <Award className="h-7 w-7 text-white" />
                 </div>
               </div>
             </CardContent>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#3D9A6A]" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C0C0C0]" />
           </Card>
         </motion.div>
       </motion.div>
@@ -267,7 +267,7 @@ export function UserDashboardPage() {
           <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg h-full bg-white dark:bg-[#141F1A]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#1A2E23] dark:text-[#E8F0EC]">
-                <Target className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <Target className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 Ma progression
               </CardTitle>
               <CardDescription className="text-[#5A7265] dark:text-[#8BA898]">Suivez votre avancement dans les quiz</CardDescription>
@@ -279,7 +279,7 @@ export function UserDashboardPage() {
                   <span className="text-sm text-[#5A7265] dark:text-[#8BA898]">{completionRate}%</span>
                 </div>
                 <div className="h-2 rounded-full bg-[#E8F0EC] dark:bg-[#1E2D26] overflow-hidden">
-                  <div className="h-full rounded-full bg-[#1B5E3D] transition-all" style={{ width: `${completionRate}%` }} />
+                  <div className="h-full rounded-full bg-[#D4AF37] transition-all" style={{ width: `${completionRate}%` }} />
                 </div>
                 <p className="text-xs text-[#5A7265] dark:text-[#8BA898] mt-1">
                   {stats?.quizzesCompleted || 0} / {stats?.totalQuizzes || 0} quiz
@@ -291,7 +291,7 @@ export function UserDashboardPage() {
                   <span className="text-sm text-[#5A7265] dark:text-[#8BA898]">{successRate}%</span>
                 </div>
                 <div className="h-2 rounded-full bg-[#E8F0EC] dark:bg-[#1E2D26] overflow-hidden">
-                  <div className="h-full rounded-full bg-[#2D7A50] transition-all" style={{ width: `${successRate}%` }} />
+                  <div className="h-full rounded-full bg-[#B8960F] transition-all" style={{ width: `${successRate}%` }} />
                 </div>
                 <p className="text-xs text-[#5A7265] dark:text-[#8BA898] mt-1">
                   {stats?.quizzesPassed || 0} réussis sur {stats?.totalAttempts || 0} tentatives
@@ -300,7 +300,7 @@ export function UserDashboardPage() {
 
               <div className="pt-4">
                 <Link to="/quizzes">
-                  <Button className="w-full gap-2 bg-[#1B5E3D] hover:bg-[#144832] text-white">
+                  <Button className="w-full gap-2 bg-[#D4AF37] hover:bg-[#A89030] text-white">
                     <Zap className="h-4 w-4" />
                     Continuer les quiz
                     <ChevronRight className="h-4 w-4" />
@@ -320,7 +320,7 @@ export function UserDashboardPage() {
           <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg h-full bg-white dark:bg-[#141F1A]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#1A2E23] dark:text-[#E8F0EC]">
-                <Clock className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <Clock className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 Activité récente
               </CardTitle>
               <CardDescription className="text-[#5A7265] dark:text-[#8BA898]">Vos derniers quiz</CardDescription>
@@ -338,7 +338,7 @@ export function UserDashboardPage() {
                     >
                       <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${
                         attempt.passed
-                          ? 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/20 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                          ? 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/20 text-[#D4AF37] dark:text-[#C0C0C0]'
                           : 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400'
                       }`}>
                         <HelpCircle className="h-5 w-5" />
@@ -351,7 +351,7 @@ export function UserDashboardPage() {
                       </div>
                       <div className="text-right">
                         <span className={`text-sm font-semibold ${
-                          attempt.passed ? 'text-[#1B5E3D] dark:text-[#3D9A6A]' : 'text-red-600 dark:text-red-400'
+                          attempt.passed ? 'text-[#D4AF37] dark:text-[#C0C0C0]' : 'text-red-600 dark:text-red-400'
                         }`}>
                           {attempt.score}%
                         </span>
@@ -368,7 +368,7 @@ export function UserDashboardPage() {
                   <HelpCircle className="h-12 w-12 mx-auto text-[#5A7265]/50 dark:text-[#8BA898]/50 mb-4" />
                   <p className="text-[#5A7265] dark:text-[#8BA898]">Aucun quiz complété</p>
                   <Link to="/quizzes">
-                    <Button variant="link" className="mt-2 text-[#1B5E3D] dark:text-[#3D9A6A]">
+                    <Button variant="link" className="mt-2 text-[#D4AF37] dark:text-[#C0C0C0]">
                       Commencer un quiz
                     </Button>
                   </Link>
@@ -390,7 +390,7 @@ export function UserDashboardPage() {
           <Link to="/themes">
             <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white dark:bg-[#141F1A]">
               <CardContent className="p-6 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1B5E3D] shadow-lg mx-auto mb-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D4AF37] shadow-lg mx-auto mb-3">
                   <BookOpen className="h-6 w-6 text-white" />
                 </div>
                 <p className="font-medium text-[#1A2E23] dark:text-[#E8F0EC]">Thèmes</p>
@@ -400,7 +400,7 @@ export function UserDashboardPage() {
           <Link to="/quizzes">
             <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white dark:bg-[#141F1A]">
               <CardContent className="p-6 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2D7A50] shadow-lg mx-auto mb-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#B8960F] shadow-lg mx-auto mb-3">
                   <HelpCircle className="h-6 w-6 text-white" />
                 </div>
                 <p className="font-medium text-[#1A2E23] dark:text-[#E8F0EC]">Quiz</p>
@@ -420,7 +420,7 @@ export function UserDashboardPage() {
           <Link to="/forum">
             <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white dark:bg-[#141F1A]">
               <CardContent className="p-6 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#3D9A6A] shadow-lg mx-auto mb-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C0C0C0] shadow-lg mx-auto mb-3">
                   <MessageSquare className="h-6 w-6 text-white" />
                 </div>
                 <p className="font-medium text-[#1A2E23] dark:text-[#E8F0EC]">Forum</p>

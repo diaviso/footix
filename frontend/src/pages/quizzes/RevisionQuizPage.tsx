@@ -230,7 +230,7 @@ export default function RevisionQuizPage() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B5E3D]" />
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37]" />
       </div>
     );
   }
@@ -425,7 +425,7 @@ export default function RevisionQuizPage() {
             <Button
               size="lg"
               onClick={() => setShowCorrection(true)}
-              className="bg-[#1B5E3D] hover:bg-[#144832] text-white gap-2"
+              className="bg-[#D4AF37] hover:bg-[#A89030] text-white gap-2"
             >
               <BookOpen className="h-5 w-5" />
               Voir la correction
@@ -737,7 +737,7 @@ export default function RevisionQuizPage() {
             'flex items-center gap-2 px-4 py-2 rounded-full font-mono font-bold',
             timeLeft <= 60
               ? 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'
-              : 'bg-[#1B5E3D]/10 text-[#1B5E3D] dark:text-[#3D9A6A]'
+              : 'bg-[#D4AF37]/10 text-[#D4AF37] dark:text-[#C0C0C0]'
           )}>
             <Clock className="h-4 w-4" />
             {formatTime(timeLeft)}
@@ -754,7 +754,7 @@ export default function RevisionQuizPage() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
           >
-            <Card className="border-2 border-[#1B5E3D]/20 shadow-xl">
+            <Card className="border-2 border-[#D4AF37]/20 shadow-xl">
               <CardHeader>
                 <div className="flex flex-wrap items-center gap-2 mb-3">
                   <Badge variant="outline" className="text-xs">
@@ -780,14 +780,14 @@ export default function RevisionQuizPage() {
                         className={cn(
                           'w-full p-4 rounded-xl border-2 text-left transition-all flex items-center gap-3',
                           isSelected
-                            ? 'border-[#1B5E3D] bg-[#1B5E3D]/10 dark:bg-[#1B5E3D]/20'
-                            : 'border-muted hover:border-[#1B5E3D]/50 hover:bg-muted/50'
+                            ? 'border-[#D4AF37] bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20'
+                            : 'border-muted hover:border-[#D4AF37]/50 hover:bg-muted/50'
                         )}
                       >
                         <span className={cn(
                           'flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-colors',
                           isSelected
-                            ? 'bg-[#1B5E3D] text-white'
+                            ? 'bg-[#D4AF37] text-white'
                             : 'bg-muted'
                         )}>
                           {currentQuestion.type === 'QCU' ? (
@@ -824,7 +824,7 @@ export default function RevisionQuizPage() {
           {currentQuestionIndex < quiz.questions.length - 1 ? (
             <Button
               onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
-              className="bg-[#1B5E3D] hover:bg-[#144832] text-white"
+              className="bg-[#D4AF37] hover:bg-[#A89030] text-white"
             >
               Suivant
               <ChevronRight className="h-4 w-4 ml-1" />
@@ -856,7 +856,7 @@ export default function RevisionQuizPage() {
         </div>
       </div>
 
-      <Card className="border-2 border-[#1B5E3D]/20 shadow-xl overflow-hidden">
+      <Card className="border-2 border-[#D4AF37]/20 shadow-xl overflow-hidden">
         <div className="h-2 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500" />
         <CardContent className="p-8 space-y-6">
           <div className="flex items-center justify-center">
@@ -876,11 +876,11 @@ export default function RevisionQuizPage() {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-[#1B5E3D]">10</div>
+              <div className="text-2xl font-bold text-[#D4AF37]">10</div>
               <div className="text-sm text-muted-foreground">Questions</div>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-[#1B5E3D]">5 min</div>
+              <div className="text-2xl font-bold text-[#D4AF37]">5 min</div>
               <div className="text-sm text-muted-foreground">Temps limite</div>
             </div>
           </div>

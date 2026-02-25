@@ -94,7 +94,7 @@ const ToolbarButton = ({
     className={cn(
       'p-2 rounded-lg transition-colors',
       isActive
-        ? 'bg-[#1B5E3D] text-white'
+        ? 'bg-[#D4AF37] text-white'
         : 'hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300'
     )}
   >
@@ -377,7 +377,7 @@ export default function AdminEmailPage() {
         <Card className="lg:col-span-1 border-2 border-slate-200 dark:border-slate-700">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Users className="h-5 w-5 text-[#1B5E3D]" />
+              <Users className="h-5 w-5 text-[#D4AF37]" />
               Destinataires
             </CardTitle>
             <CardDescription>
@@ -391,7 +391,7 @@ export default function AdminEmailPage() {
                 variant={mode === 'category' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setMode('category')}
-                className={mode === 'category' ? 'bg-[#1B5E3D] hover:bg-[#144832] flex-1' : 'flex-1'}
+                className={mode === 'category' ? 'bg-[#D4AF37] hover:bg-[#A89030] flex-1' : 'flex-1'}
               >
                 <Users className="h-3 w-3 mr-1" />
                 Diffusion
@@ -400,7 +400,7 @@ export default function AdminEmailPage() {
                 variant={mode === 'manual' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setMode('manual')}
-                className={mode === 'manual' ? 'bg-[#1B5E3D] hover:bg-[#144832] flex-1' : 'flex-1'}
+                className={mode === 'manual' ? 'bg-[#D4AF37] hover:bg-[#A89030] flex-1' : 'flex-1'}
               >
                 <Search className="h-3 w-3 mr-1" />
                 Manuel
@@ -412,7 +412,7 @@ export default function AdminEmailPage() {
                 {/* Category radio options */}
                 {isLoadingCounts ? (
                   <div className="flex items-center justify-center py-8">
-                    <Loader2 className="h-5 w-5 animate-spin text-[#1B5E3D]" />
+                    <Loader2 className="h-5 w-5 animate-spin text-[#D4AF37]" />
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -421,20 +421,20 @@ export default function AdminEmailPage() {
                       className={cn(
                         'flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all',
                         selectedCategory === 'all'
-                          ? 'border-[#1B5E3D] bg-[#1B5E3D]/5'
-                          : 'border-slate-200 dark:border-slate-700 hover:border-[#1B5E3D]/40'
+                          ? 'border-[#D4AF37] bg-[#D4AF37]/5'
+                          : 'border-slate-200 dark:border-slate-700 hover:border-[#D4AF37]/40'
                       )}
                       onClick={() => setSelectedCategory('all')}
                     >
                       <div className={cn(
                         'w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0',
-                        selectedCategory === 'all' ? 'border-[#1B5E3D]' : 'border-slate-300'
+                        selectedCategory === 'all' ? 'border-[#D4AF37]' : 'border-slate-300'
                       )}>
-                        {selectedCategory === 'all' && <div className="w-2.5 h-2.5 rounded-full bg-[#1B5E3D]" />}
+                        {selectedCategory === 'all' && <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37]" />}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <UserCheck className="h-4 w-4 text-[#1B5E3D]" />
+                          <UserCheck className="h-4 w-4 text-[#D4AF37]" />
                           <span className="text-sm font-medium">Tous les utilisateurs</span>
                         </div>
                         <p className="text-xs text-muted-foreground mt-0.5">Emails vérifiés avec notifications activées</p>
@@ -540,7 +540,7 @@ export default function AdminEmailPage() {
                   <div className="max-h-[350px] p-2 space-y-1">
                     {isSearching ? (
                       <div className="flex items-center justify-center py-8">
-                        <Loader2 className="h-5 w-5 animate-spin text-[#1B5E3D]" />
+                        <Loader2 className="h-5 w-5 animate-spin text-[#D4AF37]" />
                       </div>
                     ) : searchQuery.trim() === '' ? (
                       <p className="text-center text-sm text-muted-foreground py-8">
@@ -565,13 +565,13 @@ export default function AdminEmailPage() {
                             className={cn(
                               'flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-colors',
                               selectedUserIds.includes(u.id)
-                                ? 'bg-[#1B5E3D]/10 border border-[#1B5E3D]/30'
+                                ? 'bg-[#D4AF37]/10 border border-[#D4AF37]/30'
                                 : 'hover:bg-slate-50 dark:hover:bg-slate-800'
                             )}
                             onClick={() => handleSelectUser(u)}
                           >
                             {selectedUserIds.includes(u.id) ? (
-                              <CheckSquare className="h-4 w-4 text-[#1B5E3D] flex-shrink-0" />
+                              <CheckSquare className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
                             ) : (
                               <Square className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                             )}
@@ -606,7 +606,7 @@ export default function AdminEmailPage() {
         <Card className="lg:col-span-2 border-2 border-slate-200 dark:border-slate-700">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Mail className="h-5 w-5 text-[#1B5E3D]" />
+              <Mail className="h-5 w-5 text-[#D4AF37]" />
               Composer l'email
             </CardTitle>
           </CardHeader>
@@ -729,7 +729,7 @@ export default function AdminEmailPage() {
             {/* Signature Image */}
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
-                <ImageIcon className="h-4 w-4 text-[#1B5E3D]" />
+                <ImageIcon className="h-4 w-4 text-[#D4AF37]" />
                 Signature (image en bas de l'email)
               </Label>
               {signatureImageUrl ? (
@@ -797,7 +797,7 @@ export default function AdminEmailPage() {
               <Button
                 onClick={handlePreviewSend}
                 disabled={isSending || recipientCount === 0}
-                className="bg-gradient-to-r from-[#1B5E3D] to-[#2D7A50] hover:from-[#144832] hover:to-[#1B5E3D] text-white px-8"
+                className="bg-gradient-to-r from-[#D4AF37] to-[#B8960F] hover:from-[#A89030] hover:to-[#D4AF37] text-white px-8"
               >
                 {isSending ? (
                   <>
@@ -860,7 +860,7 @@ export default function AdminEmailPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <History className="h-5 w-5 text-[#1B5E3D]" />
+              <History className="h-5 w-5 text-[#D4AF37]" />
               <CardTitle className="text-lg">Historique des emails</CardTitle>
             </div>
             <Badge variant="secondary">{emailHistory.length} envoi(s)</Badge>
@@ -869,7 +869,7 @@ export default function AdminEmailPage() {
         <CardContent>
           {isLoadingHistory ? (
             <div className="flex items-center justify-center py-8">
-              <Loader2 className="h-6 w-6 animate-spin text-[#1B5E3D]" />
+              <Loader2 className="h-6 w-6 animate-spin text-[#D4AF37]" />
             </div>
           ) : emailHistory.length === 0 ? (
             <div className="text-center py-8 text-muted-foreground">
@@ -953,7 +953,7 @@ export default function AdminEmailPage() {
                           {/* Stats */}
                           <div className="grid grid-cols-3 gap-3">
                             <div className="bg-white dark:bg-slate-800 rounded-lg p-3 text-center border">
-                              <p className="text-2xl font-bold text-[#1B5E3D]">{item.recipientCount}</p>
+                              <p className="text-2xl font-bold text-[#D4AF37]">{item.recipientCount}</p>
                               <p className="text-xs text-muted-foreground">Destinataires</p>
                             </div>
                             <div className="bg-white dark:bg-slate-800 rounded-lg p-3 text-center border">
@@ -1052,7 +1052,7 @@ export default function AdminEmailPage() {
             </Button>
             <Button
               onClick={handleSendEmail}
-              className="bg-[#1B5E3D] hover:bg-[#144832] text-white"
+              className="bg-[#D4AF37] hover:bg-[#A89030] text-white"
             >
               <Send className="h-4 w-4 mr-2" />
               Confirmer l'envoi

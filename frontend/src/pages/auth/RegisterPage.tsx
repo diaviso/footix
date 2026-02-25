@@ -57,13 +57,13 @@ export function RegisterPage() {
         <div className="flex justify-center mb-4">
           <img src="/logo.svg" alt="Footix" className="h-20 w-20 rounded-2xl shadow-lg" />
         </div>
-        <h1 className="text-3xl font-bold text-[#1B5E3D] dark:text-[#3D9A6A]">Footix</h1>
+        <h1 className="text-3xl font-bold text-[#D4AF37] dark:text-[#C0C0C0]">Footix</h1>
         <p className="text-muted-foreground mt-2">Plateforme d'apprentissage</p>
       </div>
 
       <Card className="border-0 shadow-2xl bg-white/95 dark:bg-[#141F1A]/95 backdrop-blur-xl overflow-hidden">
         {/* Decorative top border with brand gradient */}
-        <div className="h-1.5 bg-gradient-to-r from-[#F5A623] via-[#2D7A50] to-[#1B5E3D]" />
+        <div className="h-1.5 bg-gradient-to-r from-[#F5A623] via-[#B8960F] to-[#D4AF37]" />
         
         <CardHeader className="space-y-1 pb-4 pt-6">
           <div className="flex items-center gap-3 mb-2">
@@ -84,7 +84,7 @@ export function RegisterPage() {
           <Button
             type="button"
             variant="outline"
-            className="w-full h-12 gap-3 text-base border-2 border-[#D1DDD6] dark:border-[#2D3F35] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26] hover:border-[#1B5E3D] dark:hover:border-[#3D9A6A] transition-all duration-200"
+            className="w-full h-12 gap-3 text-base border-2 border-[#D1DDD6] dark:border-[#2D3F35] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26] hover:border-[#D4AF37] dark:hover:border-[#C0C0C0] transition-all duration-200"
             onClick={handleGoogleLogin}
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export function RegisterPage() {
                     id="firstName"
                     type="text"
                     placeholder="Jean"
-                    className="pl-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#1B5E3D] dark:focus:border-[#3D9A6A] transition-all duration-200"
+                    className="pl-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#D4AF37] dark:focus:border-[#C0C0C0] transition-all duration-200"
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     required
@@ -149,7 +149,7 @@ export function RegisterPage() {
                     id="lastName"
                     type="text"
                     placeholder="Dupont"
-                    className="pl-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#1B5E3D] dark:focus:border-[#3D9A6A] transition-all duration-200"
+                    className="pl-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#D4AF37] dark:focus:border-[#C0C0C0] transition-all duration-200"
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     required
@@ -168,7 +168,7 @@ export function RegisterPage() {
                   id="email"
                   type="email"
                   placeholder="vous@exemple.com"
-                  className="pl-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#1B5E3D] dark:focus:border-[#3D9A6A] transition-all duration-200"
+                  className="pl-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#D4AF37] dark:focus:border-[#C0C0C0] transition-all duration-200"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
@@ -186,7 +186,7 @@ export function RegisterPage() {
                   id="password"
                   type={showPassword ? 'text' : 'password'}
                   placeholder="••••••••"
-                  className="pl-10 pr-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#1B5E3D] dark:focus:border-[#3D9A6A] transition-all duration-200"
+                  className="pl-10 pr-10 h-12 border-2 border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#0D1512] focus:border-[#D4AF37] dark:focus:border-[#C0C0C0] transition-all duration-200"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   required
@@ -195,7 +195,7 @@ export function RegisterPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#5A7265] hover:text-[#1B5E3D] dark:text-[#8BA898] dark:hover:text-[#3D9A6A] transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#5A7265] hover:text-[#D4AF37] dark:text-[#8BA898] dark:hover:text-[#C0C0C0] transition-colors"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -208,7 +208,7 @@ export function RegisterPage() {
             <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
               <Button
                 type="submit"
-                className="w-full h-12 text-base font-semibold bg-[#1B5E3D] hover:bg-[#144832] dark:bg-[#2D7A50] dark:hover:bg-[#1B5E3D] text-white shadow-lg shadow-[#1B5E3D]/25 dark:shadow-[#2D7A50]/25 transition-all duration-200"
+                className="w-full h-12 text-base font-semibold bg-[#D4AF37] hover:bg-[#A89030] dark:bg-[#B8960F] dark:hover:bg-[#D4AF37] text-white shadow-lg shadow-[#D4AF37]/25 dark:shadow-[#B8960F]/25 transition-all duration-200"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -230,7 +230,7 @@ export function RegisterPage() {
             Déjà un compte ?{' '}
             <Link 
               to="/login" 
-              className="text-[#1B5E3D] dark:text-[#3D9A6A] font-semibold hover:text-[#144832] dark:hover:text-[#4DB87D] transition-colors"
+              className="text-[#D4AF37] dark:text-[#C0C0C0] font-semibold hover:text-[#A89030] dark:hover:text-[#4DB87D] transition-colors"
             >
               Se connecter
             </Link>

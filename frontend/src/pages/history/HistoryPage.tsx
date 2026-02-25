@@ -149,8 +149,8 @@ export function HistoryPage() {
     return (
       <div className="flex flex-col items-center justify-center py-24">
         <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#1B5E3D] via-[#F5A623] to-[#3D9A6A] blur-xl opacity-30 animate-pulse" />
-          <Loader2 className="h-16 w-16 animate-spin text-[#1B5E3D] dark:text-[#3D9A6A] relative" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F5A623] to-[#C0C0C0] blur-xl opacity-30 animate-pulse" />
+          <Loader2 className="h-16 w-16 animate-spin text-[#D4AF37] dark:text-[#C0C0C0] relative" />
         </div>
         <p className="mt-4 text-[#5A7265] dark:text-[#8BA898]">Chargement de l'historique...</p>
       </div>
@@ -163,7 +163,7 @@ export function HistoryPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-[#1A2E23] dark:text-[#E8F0EC] flex items-center gap-2 sm:gap-3">
-            <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#1B5E3D] text-white shadow-lg">
+            <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#D4AF37] text-white shadow-lg">
               <History className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
             <span className="hidden sm:inline">Historique des Quiz</span>
@@ -184,10 +184,10 @@ export function HistoryPage() {
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
         >
           <motion.div variants={item}>
-            <Card className="border border-[#1B5E3D]/20 dark:border-[#3D9A6A]/30 shadow-lg bg-white dark:bg-[#141F1A]">
+            <Card className="border border-[#D4AF37]/20 dark:border-[#C0C0C0]/30 shadow-lg bg-white dark:bg-[#141F1A]">
               <CardContent className="pt-6 text-center">
-                <div className="w-12 h-12 mx-auto rounded-xl bg-[#1B5E3D]/10 flex items-center justify-center mb-3">
-                  <BarChart3 className="h-6 w-6 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <div className="w-12 h-12 mx-auto rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-3">
+                  <BarChart3 className="h-6 w-6 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 </div>
                 <p className="text-2xl font-bold text-[#1A2E23] dark:text-[#E8F0EC]">{stats.totalAttempts}</p>
                 <p className="text-xs text-[#5A7265] dark:text-[#8BA898] font-medium">Tentatives</p>
@@ -196,10 +196,10 @@ export function HistoryPage() {
           </motion.div>
 
           <motion.div variants={item}>
-            <Card className="border border-[#3D9A6A]/20 dark:border-[#3D9A6A]/30 shadow-lg bg-white dark:bg-[#141F1A]">
+            <Card className="border border-[#C0C0C0]/20 dark:border-[#C0C0C0]/30 shadow-lg bg-white dark:bg-[#141F1A]">
               <CardContent className="pt-6 text-center">
-                <div className="w-12 h-12 mx-auto rounded-xl bg-[#3D9A6A]/10 flex items-center justify-center mb-3">
-                  <CheckCircle className="h-6 w-6 text-[#3D9A6A]" />
+                <div className="w-12 h-12 mx-auto rounded-xl bg-[#C0C0C0]/10 flex items-center justify-center mb-3">
+                  <CheckCircle className="h-6 w-6 text-[#C0C0C0]" />
                 </div>
                 <p className="text-2xl font-bold text-[#1A2E23] dark:text-[#E8F0EC]">{stats.passedAttempts}</p>
                 <p className="text-xs text-[#5A7265] dark:text-[#8BA898] font-medium">Réussites</p>
@@ -232,10 +232,10 @@ export function HistoryPage() {
           </motion.div>
 
           <motion.div variants={item}>
-            <Card className="border border-[#2D7A50]/20 dark:border-[#2D7A50]/30 shadow-lg bg-white dark:bg-[#141F1A]">
+            <Card className="border border-[#B8960F]/20 dark:border-[#B8960F]/30 shadow-lg bg-white dark:bg-[#141F1A]">
               <CardContent className="pt-6 text-center">
-                <div className="w-12 h-12 mx-auto rounded-xl bg-[#2D7A50]/10 flex items-center justify-center mb-3">
-                  <Target className="h-6 w-6 text-[#2D7A50]" />
+                <div className="w-12 h-12 mx-auto rounded-xl bg-[#B8960F]/10 flex items-center justify-center mb-3">
+                  <Target className="h-6 w-6 text-[#B8960F]" />
                 </div>
                 <p className="text-2xl font-bold text-[#1A2E23] dark:text-[#E8F0EC]">{stats.averageScore}%</p>
                 <p className="text-xs text-[#5A7265] dark:text-[#8BA898] font-medium">Score moyen</p>
@@ -244,10 +244,10 @@ export function HistoryPage() {
           </motion.div>
 
           <motion.div variants={item}>
-            <Card className="border border-[#1B5E3D]/20 dark:border-[#3D9A6A]/30 shadow-lg bg-white dark:bg-[#141F1A]">
+            <Card className="border border-[#D4AF37]/20 dark:border-[#C0C0C0]/30 shadow-lg bg-white dark:bg-[#141F1A]">
               <CardContent className="pt-6 text-center">
-                <div className="w-12 h-12 mx-auto rounded-xl bg-[#1B5E3D]/10 flex items-center justify-center mb-3">
-                  <TrendingUp className="h-6 w-6 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <div className="w-12 h-12 mx-auto rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-3">
+                  <TrendingUp className="h-6 w-6 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 </div>
                 <p className="text-2xl font-bold text-[#1A2E23] dark:text-[#E8F0EC]">{stats.bestScore}%</p>
                 <p className="text-xs text-[#5A7265] dark:text-[#8BA898] font-medium">Meilleur score</p>
@@ -297,7 +297,7 @@ export function HistoryPage() {
                     : "Vous n'avez pas encore échoué de quiz. Bravo !"}
               </p>
               <Link to="/quizzes">
-                <Button className="bg-[#1B5E3D] hover:bg-[#144832] text-white">
+                <Button className="bg-[#D4AF37] hover:bg-[#A89030] text-white">
                   Découvrir les quiz
                 </Button>
               </Link>

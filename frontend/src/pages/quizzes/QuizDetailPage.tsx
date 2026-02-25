@@ -664,8 +664,8 @@ export function QuizDetailPage() {
     return (
       <div className="flex flex-col items-center justify-center py-24">
         <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#1B5E3D] via-[#F5A623] to-[#3D9A6A] blur-xl opacity-30 animate-pulse" />
-          <Loader2 className="h-16 w-16 animate-spin text-[#1B5E3D] dark:text-[#3D9A6A] relative" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F5A623] to-[#C0C0C0] blur-xl opacity-30 animate-pulse" />
+          <Loader2 className="h-16 w-16 animate-spin text-[#D4AF37] dark:text-[#C0C0C0] relative" />
         </div>
         <p className="mt-4 text-[#5A7265] dark:text-[#8BA898]">Chargement du quiz...</p>
       </div>
@@ -992,7 +992,7 @@ export function QuizDetailPage() {
                   <Button
                     size="lg"
                     onClick={handleViewCorrection}
-                    className="bg-[#1B5E3D] hover:bg-[#144832] text-white"
+                    className="bg-[#D4AF37] hover:bg-[#A89030] text-white"
                   >
                     <HelpCircle className="mr-2 h-4 w-4" />
                     Voir la correction
@@ -1016,7 +1016,7 @@ export function QuizDetailPage() {
           className="w-full max-w-2xl text-center"
         >
           <Card className="border border-slate-200 dark:border-slate-700/50 shadow-2xl overflow-hidden bg-white dark:bg-slate-900/95">
-            <div className="h-2 bg-gradient-to-r from-[#1B5E3D] via-[#F5A623] to-[#3D9A6A]" />
+            <div className="h-2 bg-gradient-to-r from-[#D4AF37] via-[#F5A623] to-[#C0C0C0]" />
             <CardContent className="py-16 px-8">
               {/* Countdown timer */}
               <motion.div
@@ -1050,13 +1050,13 @@ export function QuizDetailPage() {
                     />
                     <defs>
                       <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#1B5E3D" />
+                        <stop offset="0%" stopColor="#D4AF37" />
                         <stop offset="50%" stopColor="#F5A623" />
-                        <stop offset="100%" stopColor="#3D9A6A" />
+                        <stop offset="100%" stopColor="#C0C0C0" />
                       </linearGradient>
                     </defs>
                   </svg>
-                  <span className="absolute text-7xl font-bold bg-gradient-to-r from-[#1B5E3D] via-[#F5A623] to-[#3D9A6A] bg-clip-text text-transparent">
+                  <span className="absolute text-7xl font-bold bg-gradient-to-r from-[#D4AF37] via-[#F5A623] to-[#C0C0C0] bg-clip-text text-transparent">
                     {countdownTime}
                   </span>
                 </div>
@@ -1081,7 +1081,7 @@ export function QuizDetailPage() {
                 <h3 className="font-semibold text-lg mb-4 text-center text-slate-900 dark:text-white">Comment ça marche :</h3>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#1B5E3D]/10 text-[#1B5E3D] dark:text-[#3D9A6A] text-sm font-bold">1</div>
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#D4AF37]/10 text-[#D4AF37] dark:text-[#C0C0C0] text-sm font-bold">1</div>
                     <p className="text-slate-600 dark:text-slate-400 pt-1">
                       <span className="font-medium text-slate-900 dark:text-white">{quiz.questions.length} questions</span> à répondre en <span className="font-medium text-slate-900 dark:text-white">{quiz.timeLimit} minutes</span>
                     </p>
@@ -1093,7 +1093,7 @@ export function QuizDetailPage() {
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#3D9A6A]/10 text-[#3D9A6A] text-sm font-bold">3</div>
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#C0C0C0]/10 text-[#C0C0C0] text-sm font-bold">3</div>
                     <p className="text-slate-600 dark:text-slate-400 pt-1">
                       Gagnez des <span className="font-medium text-slate-900 dark:text-white">étoiles</span> selon votre performance et la difficulté
                     </p>
@@ -1125,7 +1125,7 @@ export function QuizDetailPage() {
                   Annuler
                 </Button>
                 <Button
-                  className="bg-gradient-to-r from-[#1B5E3D] to-[#3D9A6A] hover:from-[#164a31] hover:to-[#2d7a54] text-white"
+                  className="bg-gradient-to-r from-[#D4AF37] to-[#C0C0C0] hover:from-[#164a31] hover:to-[#2d7a54] text-white"
                   onClick={() => {
                     setIsCountdown(false);
                     setIsPlaying(true);
@@ -1155,11 +1155,11 @@ export function QuizDetailPage() {
           </div>
         </div>
 
-        <Card className="border border-[#1B5E3D]/20 dark:border-[#3D9A6A]/30 shadow-lg bg-[#1B5E3D]/5 dark:bg-[#3D9A6A]/10">
+        <Card className="border border-[#D4AF37]/20 dark:border-[#C0C0C0]/30 shadow-lg bg-[#D4AF37]/5 dark:bg-[#C0C0C0]/10">
           <CardContent className="py-4 px-6">
             <div className="flex items-center gap-3">
-              <HelpCircle className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
-              <p className="text-[#1B5E3D] dark:text-[#3D9A6A]">
+              <HelpCircle className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
+              <p className="text-[#D4AF37] dark:text-[#C0C0C0]">
                 Voici les réponses correctes pour chaque question. Étudiez-les attentivement pour mieux vous préparer.
               </p>
             </div>
@@ -1178,7 +1178,7 @@ export function QuizDetailPage() {
                 <div className={cn('h-1 bg-gradient-to-r', difficultyGradients[quiz.difficulty])} />
                 <CardHeader className="pb-3">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1B5E3D] text-white font-bold text-lg shrink-0">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37] text-white font-bold text-lg shrink-0">
                       {index + 1}
                     </div>
                     <div>
@@ -1346,7 +1346,7 @@ export function QuizDetailPage() {
                           className={cn(
                             'w-full aspect-square rounded-lg text-sm font-medium transition-all',
                             isCurrent
-                              ? 'bg-[#1B5E3D] text-white shadow-lg scale-110'
+                              ? 'bg-[#D4AF37] text-white shadow-lg scale-110'
                               : isAnswered
                                 ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-2 border-emerald-300 dark:border-emerald-800'
                                 : 'bg-muted hover:bg-muted/80'
@@ -1375,7 +1375,7 @@ export function QuizDetailPage() {
                     <div className={cn('h-2 bg-gradient-to-r', difficultyGradients[quiz.difficulty])} />
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3 mb-4">
-                        <Badge variant="outline" className="bg-[#1B5E3D]/10 text-[#1B5E3D] dark:text-[#3D9A6A] border-[#1B5E3D]/20">
+                        <Badge variant="outline" className="bg-[#D4AF37]/10 text-[#D4AF37] dark:text-[#C0C0C0] border-[#D4AF37]/20">
                           {currentQuestion.type === 'QCU' ? (
                             <><Circle className="h-3 w-3 mr-1" /> Choix unique</>
                           ) : (
@@ -1415,8 +1415,8 @@ export function QuizDetailPage() {
                             <div className={cn(
                               'flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm transition-all',
                               isSelected
-                                ? 'bg-[#1B5E3D] text-white'
-                                : 'bg-muted group-hover:bg-[#1B5E3D]/10'
+                                ? 'bg-[#D4AF37] text-white'
+                                : 'bg-muted group-hover:bg-[#D4AF37]/10'
                             )}>
                               {letters[idx]}
                             </div>
@@ -1471,7 +1471,7 @@ export function QuizDetailPage() {
                       <Button
                         size="lg"
                         onClick={() => setCurrentQuestionIndex((prev) => prev + 1)}
-                        className="gap-2 bg-[#1B5E3D] hover:bg-[#144832] text-white"
+                        className="gap-2 bg-[#D4AF37] hover:bg-[#A89030] text-white"
                       >
                         Suivant
                         <ChevronRight className="h-5 w-5" />
@@ -1563,7 +1563,7 @@ export function QuizDetailPage() {
               <Button
                 size="lg"
                 onClick={handleStartQuiz}
-                className="gap-2 bg-[#1B5E3D] hover:bg-[#144832] text-white"
+                className="gap-2 bg-[#D4AF37] hover:bg-[#A89030] text-white"
               >
                 <Play className="h-5 w-5" />
                 {attemptInfo.failedAttempts > 0 ? `Réessayer (${attemptInfo.remainingAttempts}/3)` : 'Commencer'}
@@ -1722,7 +1722,7 @@ export function QuizDetailPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              <Button onClick={() => handleOpenQuestionDialog()} className="gap-2 bg-[#1B5E3D] hover:bg-[#144832] text-white">
+              <Button onClick={() => handleOpenQuestionDialog()} className="gap-2 bg-[#D4AF37] hover:bg-[#A89030] text-white">
                 <Plus className="h-4 w-4" />
                 Ajouter
               </Button>
@@ -1772,7 +1772,7 @@ export function QuizDetailPage() {
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1B5E3D] text-white font-bold text-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37] text-white font-bold text-lg">
                             {quiz.questions.indexOf(question) + 1}
                           </div>
                           <div>
@@ -1967,7 +1967,7 @@ export function QuizDetailPage() {
               <Button type="button" variant="outline" onClick={() => setIsQuestionDialogOpen(false)}>
                 Annuler
               </Button>
-              <Button type="submit" disabled={isSubmitting || isAnalyzing} className="bg-[#1B5E3D] hover:bg-[#144832] text-white">
+              <Button type="submit" disabled={isSubmitting || isAnalyzing} className="bg-[#D4AF37] hover:bg-[#A89030] text-white">
                 {isAnalyzing ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

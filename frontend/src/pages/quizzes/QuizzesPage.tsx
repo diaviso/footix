@@ -358,7 +358,7 @@ export function QuizzesPage() {
       {/* Quizzes Grid */}
       {isLoading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-8 w-8 animate-spin text-[#1B5E3D] dark:text-[#3D9A6A]" />
+          <Loader2 className="h-8 w-8 animate-spin text-[#D4AF37] dark:text-[#C0C0C0]" />
         </div>
       ) : filteredQuizzes.length === 0 ? (
         <Card className="border-dashed">
@@ -395,7 +395,7 @@ export function QuizzesPage() {
                   "group relative overflow-hidden border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col bg-white dark:bg-[#141F1A]",
                   isLocked && "opacity-75",
                   needsPremium && "border-[#F5A623]/50 dark:border-[#F5A623]/30",
-                  hasPassed && "ring-2 ring-[#3D9A6A]/50"
+                  hasPassed && "ring-2 ring-[#C0C0C0]/50"
                 )}>
                   {/* Premium badge indicator (top right corner) */}
                   {needsPremium && !isLocked && (
@@ -435,7 +435,7 @@ export function QuizzesPage() {
                             {quiz.difficulty}
                           </span>
                           {quiz.isFree ? (
-                            <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#1B5E3D]/10 text-[#1B5E3D] dark:text-[#3D9A6A]">
+                            <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#D4AF37]/10 text-[#D4AF37] dark:text-[#C0C0C0]">
                               Gratuit
                             </span>
                           ) : (

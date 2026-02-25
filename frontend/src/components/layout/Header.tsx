@@ -46,9 +46,9 @@ export function Header() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-10 w-10 rounded-xl p-0 hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26]">
-          <Avatar className="h-9 w-9 ring-2 ring-[#D1DDD6] dark:ring-[#2D3F35] transition-all hover:ring-[#1B5E3D]/40 dark:hover:ring-[#3D9A6A]/40">
+          <Avatar className="h-9 w-9 ring-2 ring-[#D1DDD6] dark:ring-[#2D3F35] transition-all hover:ring-[#D4AF37]/40 dark:hover:ring-[#C0C0C0]/40">
             <AvatarImage src={getAvatarUrl((user as any)?.avatar, user?.id)} alt={user?.firstName} />
-            <AvatarFallback className="bg-[#1B5E3D] dark:bg-[#2D7A50] text-white font-medium text-sm">
+            <AvatarFallback className="bg-[#D4AF37] dark:bg-[#B8960F] text-white font-medium text-sm">
               {getInitials()}
             </AvatarFallback>
           </Avatar>
@@ -67,7 +67,7 @@ export function Header() {
               'inline-flex items-center rounded-md px-2 py-1 text-xs font-medium mt-2 w-fit',
               user?.role === 'ADMIN'
                 ? 'bg-[#F5A623]/10 text-[#F5A623]'
-                : 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/20 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                : 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/20 text-[#D4AF37] dark:text-[#C0C0C0]'
             )}>
               {user?.role === 'ADMIN' ? 'Administrateur' : 'Utilisateur'}
             </span>
@@ -126,7 +126,7 @@ export function Header() {
               placeholder="Rechercher..."
               className={cn(
                 'pl-10 h-10 bg-[#E8F0EC]/50 dark:bg-[#1E2D26]/50 border-[#D1DDD6] dark:border-[#2D3F35] rounded-xl',
-                'focus:bg-white dark:focus:bg-[#141F1A] focus:ring-2 focus:ring-[#1B5E3D]/20 dark:focus:ring-[#3D9A6A]/20 focus:border-[#1B5E3D]/30 dark:focus:border-[#3D9A6A]/30',
+                'focus:bg-white dark:focus:bg-[#141F1A] focus:ring-2 focus:ring-[#D4AF37]/20 dark:focus:ring-[#C0C0C0]/20 focus:border-[#D4AF37]/30 dark:focus:border-[#C0C0C0]/30',
                 'transition-all placeholder:text-[#5A7265] dark:placeholder:text-[#8BA898]'
               )}
               onFocus={() => setSearchFocused(true)}
@@ -150,7 +150,7 @@ export function Header() {
               transition={{ duration: 0.3, type: 'spring', stiffness: 200 }}
             >
               {isDark ? (
-                <Moon className="h-5 w-5 text-[#3D9A6A]" />
+                <Moon className="h-5 w-5 text-[#C0C0C0]" />
               ) : (
                 <Sun className="h-5 w-5 text-[#F5A623]" />
               )}
@@ -205,7 +205,7 @@ export function Header() {
             className="relative overflow-hidden h-10 w-10 rounded-xl hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26]"
           >
             {isDark ? (
-              <Moon className="h-5 w-5 text-[#3D9A6A]" />
+              <Moon className="h-5 w-5 text-[#C0C0C0]" />
             ) : (
               <Sun className="h-5 w-5 text-[#F5A623]" />
             )}

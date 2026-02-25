@@ -289,11 +289,11 @@ export function ThemesPage() {
           {filteredThemes.map((theme) => (
             <motion.div key={theme.id} variants={item}>
               <Card className={`group relative overflow-hidden border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-[#141F1A] ${!theme.isActive ? 'opacity-60' : ''}`}>
-                <div className={`absolute top-0 left-0 right-0 h-1 ${theme.isActive ? 'bg-gradient-to-r from-[#1B5E3D] via-[#2D7A50] to-[#3D9A6A]' : 'bg-gray-400'}`} />
+                <div className={`absolute top-0 left-0 right-0 h-1 ${theme.isActive ? 'bg-gradient-to-r from-[#D4AF37] via-[#B8960F] to-[#C0C0C0]' : 'bg-gray-400'}`} />
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3 flex-1">
-                      <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${theme.isActive ? 'bg-[#1B5E3D]' : 'bg-gray-400'} text-white font-bold text-lg`}>
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${theme.isActive ? 'bg-[#D4AF37]' : 'bg-gray-400'} text-white font-bold text-lg`}>
                         {theme.position}
                       </div>
                       <div className="flex-1">

@@ -35,7 +35,7 @@ export function UserAvatar({ user, className, size = 'md' }: UserAvatarProps) {
   return (
     <Avatar className={cn(sizeClasses[size], className)}>
       {avatarUrl && <AvatarImage src={avatarUrl} alt={`${user.firstName} ${user.lastName}`} />}
-      <AvatarFallback className="bg-gradient-to-br from-[#1B5E3D] to-[#3D9A6A] text-white font-semibold">
+      <AvatarFallback className="bg-gradient-to-br from-[#D4AF37] to-[#C0C0C0] text-white font-semibold">
         {initials}
       </AvatarFallback>
     </Avatar>

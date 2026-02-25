@@ -76,7 +76,7 @@ export function Sidebar() {
               className={cn(
                 'flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200',
                 isActive
-                  ? 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/15 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                  ? 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/15 text-[#D4AF37] dark:text-[#C0C0C0]'
                   : 'text-[#5A7265] dark:text-[#8BA898] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26] hover:text-[#1A2E23] dark:hover:text-[#E8F0EC]'
               )}
             >
@@ -84,7 +84,7 @@ export function Sidebar() {
                 className={cn(
                   'flex h-9 w-9 items-center justify-center rounded-lg transition-all',
                   isActive
-                    ? 'bg-[#1B5E3D] dark:bg-[#2D7A50] text-white shadow-md shadow-[#1B5E3D]/25'
+                    ? 'bg-[#D4AF37] dark:bg-[#B8960F] text-white shadow-md shadow-[#D4AF37]/25'
                     : 'bg-[#E8F0EC] dark:bg-[#1E2D26]'
                 )}
               >
@@ -134,7 +134,7 @@ export function Sidebar() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-gradient-to-br from-[#1B5E3D]/20 to-[#3D9A6A]/10 blur-3xl"
+        className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-gradient-to-br from-[#D4AF37]/20 to-[#C0C0C0]/10 blur-3xl"
       />
       <motion.div
         animate={{
@@ -161,7 +161,7 @@ export function Sidebar() {
           ease: 'easeInOut',
           delay: 4,
         }}
-        className="absolute bottom-1/4 -left-10 w-36 h-36 rounded-full bg-gradient-to-br from-[#2D7A50]/20 to-[#3D9A6A]/10 blur-3xl"
+        className="absolute bottom-1/4 -left-10 w-36 h-36 rounded-full bg-gradient-to-br from-[#B8960F]/20 to-[#C0C0C0]/10 blur-3xl"
       />
       
       {/* Subtle animated lines */}
@@ -171,7 +171,7 @@ export function Sidebar() {
           y1="20%"
           x2="100%"
           y2="25%"
-          stroke="#1B5E3D"
+          stroke="#D4AF37"
           strokeWidth="1"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
@@ -193,7 +193,7 @@ export function Sidebar() {
           y1="85%"
           x2="100%"
           y2="80%"
-          stroke="#3D9A6A"
+          stroke="#C0C0C0"
           strokeWidth="1"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
@@ -236,7 +236,7 @@ export function Sidebar() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -10 }}
-                  className="text-xl font-bold text-[#1B5E3D] dark:text-[#3D9A6A]"
+                  className="text-xl font-bold text-[#D4AF37] dark:text-[#C0C0C0]"
                 >
                   Footix
                 </motion.span>
@@ -312,7 +312,7 @@ export function Sidebar() {
             variant="ghost"
             size="icon"
             onClick={toggleSidebar}
-            className="w-full h-10 text-[#5A7265] dark:text-[#8BA898] hover:text-[#1B5E3D] dark:hover:text-[#3D9A6A] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26]"
+            className="w-full h-10 text-[#5A7265] dark:text-[#8BA898] hover:text-[#D4AF37] dark:hover:text-[#C0C0C0] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26]"
           >
             {sidebarCollapsed ? (
               <ChevronRight className="h-5 w-5" />
@@ -349,7 +349,7 @@ export function Sidebar() {
                   alt="Footix" 
                   className="h-10 w-10 rounded-xl shadow-lg"
                 />
-                <span className="text-xl font-bold text-[#1B5E3D] dark:text-[#3D9A6A]">
+                <span className="text-xl font-bold text-[#D4AF37] dark:text-[#C0C0C0]">
                   Footix
                 </span>
               </Link>
@@ -357,7 +357,7 @@ export function Sidebar() {
                 variant="ghost"
                 size="icon"
                 onClick={closeMobileSidebar}
-                className="h-10 w-10 text-[#5A7265] dark:text-[#8BA898] hover:text-[#1B5E3D] dark:hover:text-[#3D9A6A] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26]"
+                className="h-10 w-10 text-[#5A7265] dark:text-[#8BA898] hover:text-[#D4AF37] dark:hover:text-[#C0C0C0] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26]"
               >
                 <X className="h-5 w-5" />
               </Button>
@@ -379,7 +379,7 @@ export function Sidebar() {
                         className={cn(
                           'flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200',
                           isActive
-                            ? 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/15 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                            ? 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/15 text-[#D4AF37] dark:text-[#C0C0C0]'
                             : 'text-[#5A7265] dark:text-[#8BA898] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26] hover:text-[#1A2E23] dark:hover:text-[#E8F0EC]'
                         )}
                       >
@@ -387,7 +387,7 @@ export function Sidebar() {
                           className={cn(
                             'flex h-9 w-9 items-center justify-center rounded-lg transition-all',
                             isActive
-                              ? 'bg-[#1B5E3D] dark:bg-[#2D7A50] text-white shadow-md shadow-[#1B5E3D]/25'
+                              ? 'bg-[#D4AF37] dark:bg-[#B8960F] text-white shadow-md shadow-[#D4AF37]/25'
                               : 'bg-[#E8F0EC] dark:bg-[#1E2D26]'
                           )}
                         >
@@ -416,7 +416,7 @@ export function Sidebar() {
                         className={cn(
                           'flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200',
                           isActive
-                            ? 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/15 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                            ? 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/15 text-[#D4AF37] dark:text-[#C0C0C0]'
                             : 'text-[#5A7265] dark:text-[#8BA898] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26] hover:text-[#1A2E23] dark:hover:text-[#E8F0EC]'
                         )}
                       >
@@ -424,7 +424,7 @@ export function Sidebar() {
                           className={cn(
                             'flex h-9 w-9 items-center justify-center rounded-lg transition-all',
                             isActive
-                              ? 'bg-[#1B5E3D] dark:bg-[#2D7A50] text-white shadow-md shadow-[#1B5E3D]/25'
+                              ? 'bg-[#D4AF37] dark:bg-[#B8960F] text-white shadow-md shadow-[#D4AF37]/25'
                               : 'bg-[#E8F0EC] dark:bg-[#1E2D26]'
                           )}
                         >
@@ -453,7 +453,7 @@ export function Sidebar() {
                         className={cn(
                           'flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200',
                           isActive
-                            ? 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/15 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                            ? 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/15 text-[#D4AF37] dark:text-[#C0C0C0]'
                             : 'text-[#5A7265] dark:text-[#8BA898] hover:bg-[#E8F0EC] dark:hover:bg-[#1E2D26] hover:text-[#1A2E23] dark:hover:text-[#E8F0EC]'
                         )}
                       >
@@ -461,7 +461,7 @@ export function Sidebar() {
                           className={cn(
                             'flex h-9 w-9 items-center justify-center rounded-lg transition-all',
                             isActive
-                              ? 'bg-[#1B5E3D] dark:bg-[#2D7A50] text-white shadow-md shadow-[#1B5E3D]/25'
+                              ? 'bg-[#D4AF37] dark:bg-[#B8960F] text-white shadow-md shadow-[#D4AF37]/25'
                               : 'bg-[#E8F0EC] dark:bg-[#1E2D26]'
                           )}
                         >

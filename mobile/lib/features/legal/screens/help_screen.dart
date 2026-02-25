@@ -84,25 +84,28 @@ class HelpScreen extends StatelessWidget {
               icon: Icons.quiz_rounded,
               title: 'Les Quiz',
               content: 'Comment fonctionnent les quiz ?\n\n'
-                  '• Chaque quiz contient plusieurs questions à choix multiples\n'
+                  '• Chaque quiz contient plusieurs questions à choix unique ou multiple\n'
                   '• Vous avez un temps limité pour répondre à chaque question\n'
                   '• Un score minimum de 70% est requis pour réussir\n'
                   '• Vous gagnez des étoiles en réussissant les quiz\n\n'
                   'Tentatives :\n'
                   '• Vous disposez de 3 tentatives par quiz\n'
                   '• Les tentatives se rechargent automatiquement après 24h\n'
-                  '• Les membres Premium ont des tentatives illimitées',
+                  '• Vous pouvez acheter des tentatives supplémentaires avec vos étoiles',
               isDark: isDark,
             ),
             
             _buildHelpSection(
               icon: Icons.category_rounded,
               title: 'Les Thèmes',
-              content: 'Les quiz sont organisés par thèmes correspondant aux matières de la déontologie :\n\n'
-                  '• Déontologie de l\'EC et du CAC\n'
-                  '• Réglementation professionnelle\n'
+              content: 'Les quiz sont organisés par thèmes liés au football :\n\n'
+                  '• Coupe du Monde\n'
+                  '• Ligue des Champions\n'
+                  '• Championnat d\'Europe\n'
+                  '• Joueurs légendaires\n'
+                  '• Règles du jeu\n'
                   '• Et bien d\'autres...\n\n'
-                  'Chaque thème contient plusieurs quiz de difficulté progressive.',
+                  'Chaque thème contient plusieurs quiz de difficulté progressive (Facile, Moyen, Difficile).',
               isDark: isDark,
             ),
             
@@ -120,69 +123,24 @@ class HelpScreen extends StatelessWidget {
             ),
             
             _buildHelpSection(
-              icon: Icons.smart_toy_rounded,
-              title: 'Le Chatbot IA',
-              content: 'Notre assistant intelligent est là pour vous aider :\n\n'
-                  '• Posez des questions sur la Déontologie\n'
-                  '• Posez des questions sur le DEC\n'
-                  '• Obtenez des explications détaillées\n'
-                  '• Demandez des clarifications sur les quiz\n\n'
-                  'Conseils d\'utilisation :\n'
-                  '• Soyez précis dans vos questions\n'
-                  '• Vous pouvez poser des questions en français\n'
-                  '• L\'historique de conversation est sauvegardé',
-              isDark: isDark,
-            ),
-            
-            _buildHelpSection(
               icon: Icons.refresh_rounded,
-              title: 'La Révision',
+              title: 'Le Mode Révision',
               content: 'Le mode Révision vous permet de :\n\n'
-                  '• Réviser des questions aléatoires de tous les thèmes\n'
-                  '• Renforcer vos connaissances globales\n'
-                  '• Préparer l\'examen de manière transversale\n\n'
-                  'Note : Cette fonctionnalité est réservée aux membres Premium.',
+                  '• Répondre à des questions aléatoires de tous les thèmes\n'
+                  '• Renforcer vos connaissances globales sur le football\n'
+                  '• Vous entraîner de manière transversale\n\n'
+                  'C\'est idéal pour tester votre culture football générale !',
               isDark: isDark,
             ),
             
             _buildHelpSection(
-              icon: Icons.workspace_premium_rounded,
-              title: 'L\'abonnement Premium',
-              content: 'Devenez Premium pour débloquer :\n\n'
-                  '• ✓ Accès à tous les quiz (y compris premium)\n'
-                  '• ✓ Tentatives illimitées\n'
-                  '• ✓ Mode Révision\n'
-                  '• ✓ Chatbot IA illimité\n'
-                  '• ✓ Pas de publicités\n\n'
-                  'Gestion de l\'abonnement :\n'
-                  '• Abonnement mensuel à 9,99€/mois\n'
-                  '• Annulation possible à tout moment\n'
-                  '• Gérez votre abonnement dans les paramètres de votre store',
-              isDark: isDark,
-            ),
-            
-            _buildHelpSection(
-              icon: Icons.forum_rounded,
-              title: 'Le Forum',
-              content: 'Échangez avec la communauté :\n\n'
-                  '• Posez vos questions\n'
-                  '• Partagez vos astuces\n'
-                  '• Aidez les autres candidats\n\n'
-                  'Règles du forum :\n'
-                  '• Restez respectueux et bienveillant\n'
-                  '• Évitez le hors-sujet\n'
-                  '• Signalez les contenus inappropriés',
-              isDark: isDark,
-            ),
-            
-            _buildHelpSection(
-              icon: Icons.article_rounded,
-              title: 'Le Blog',
-              content: 'Retrouvez des articles rédigés par des experts :\n\n'
-                  '• Actualités du DEC\n'
-                  '• Conseils de préparation\n'
-                  '• Analyses de sujets d\'examen\n'
-                  '• Témoignages de candidats',
+              icon: Icons.emoji_events_rounded,
+              title: 'Le Classement',
+              content: 'Le classement vous permet de vous mesurer aux autres passionnés :\n\n'
+                  '• Gagnez des étoiles pour grimper dans le classement\n'
+                  '• Consultez le top 100 des meilleurs joueurs\n'
+                  '• Affichez votre rang et vos statistiques\n\n'
+                  'Astuce : Réussissez un maximum de quiz avec un score parfait pour accumuler le plus d\'étoiles !',
               isDark: isDark,
             ),
             
@@ -192,8 +150,8 @@ class HelpScreen extends StatelessWidget {
               content: 'Dans votre profil, vous pouvez :\n\n'
                   '• Modifier vos informations personnelles\n'
                   '• Changer votre photo de profil\n'
-                  '• Consulter vos statistiques\n'
-                  '• Gérer votre abonnement Premium',
+                  '• Consulter vos statistiques détaillées\n'
+                  '• Voir votre historique de quiz',
               isDark: isDark,
             ),
             
@@ -201,7 +159,7 @@ class HelpScreen extends StatelessWidget {
               icon: Icons.bug_report_rounded,
               title: 'Signaler un problème',
               content: 'Vous rencontrez un bug ou un problème ?\n\n'
-                  '• Contactez-nous à : declearningcontact@gmail.com\n'
+                  '• Contactez-nous à : footixcontact@gmail.com\n'
                   '• Décrivez le problème en détail\n'
                   '• Joignez une capture d\'écran si possible\n\n'
                   'Nous vous répondrons dans les plus brefs délais.',
@@ -248,7 +206,7 @@ class HelpScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Text(
-                      'declearningcontact@gmail.com',
+                      'footixcontact@gmail.com',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,

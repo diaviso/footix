@@ -169,12 +169,12 @@ export function ProfilePage() {
         {/* Profile Card */}
         <motion.div variants={itemVariants} className="lg:col-span-1">
           <Card className="overflow-hidden border border-[#D1DDD6] dark:border-[#2D3F35] bg-white dark:bg-[#141F1A]">
-            <div className="h-24 bg-gradient-to-r from-[#1B5E3D] via-[#2D7A50] to-[#3D9A6A]" />
+            <div className="h-24 bg-gradient-to-r from-[#D4AF37] via-[#B8960F] to-[#C0C0C0]" />
             <CardContent className="pt-0 -mt-12 text-center">
               <div className="relative inline-block">
                 <Avatar className="h-24 w-24 ring-4 ring-background shadow-xl">
                   <AvatarImage src={getAvatarUrl((user as any)?.avatar, user?.id)} alt={user?.firstName} />
-                  <AvatarFallback className="bg-[#1B5E3D] text-white text-2xl font-bold">
+                  <AvatarFallback className="bg-[#D4AF37] text-white text-2xl font-bold">
                     {getInitials()}
                   </AvatarFallback>
                 </Avatar>
@@ -207,7 +207,7 @@ export function ProfilePage() {
                 'inline-flex items-center rounded-full px-3 py-1 text-xs font-medium mt-3',
                 user?.role === 'ADMIN'
                   ? 'bg-[#F5A623]/10 text-[#F5A623]'
-                  : 'bg-[#1B5E3D]/10 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                  : 'bg-[#D4AF37]/10 text-[#D4AF37] dark:text-[#C0C0C0]'
               )}>
                 <Shield className="h-3 w-3 mr-1" />
                 {user?.role === 'ADMIN' ? 'Administrateur' : 'Utilisateur'}
@@ -400,7 +400,7 @@ export function ProfilePage() {
 
               {/* Price info */}
               <p className="text-center text-sm text-[#5A7265] dark:text-[#8BA898]">
-                Abonnement mensuel : <span className="font-semibold text-[#1B5E3D]">9,99€/mois</span>
+                Abonnement mensuel : <span className="font-semibold text-[#D4AF37]">9,99€/mois</span>
               </p>
             </CardContent>
           </Card>

@@ -4,17 +4,14 @@ import {
   HelpCircle,
   BookOpen,
   Star,
-  MessageSquare,
-  Bot,
+  Trophy,
   RefreshCw,
-  Crown,
-  Users,
-  FileText,
   User,
   Bug,
   Mail,
   ChevronDown,
   ChevronUp,
+  Zap,
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -47,7 +44,7 @@ function HelpSection({ icon, title, content }: HelpSectionProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-4 flex items-center gap-4 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
       >
-        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/20 flex items-center justify-center text-[#1B5E3D] dark:text-[#3D9A6A]">
+        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] dark:text-[#D4AF37]">
           {icon}
         </div>
         <span className="flex-1 font-semibold text-slate-900 dark:text-white">
@@ -82,11 +79,11 @@ export function HelpPage() {
     >
       {/* Header */}
       <motion.div variants={item}>
-        <Card className="border-0 bg-gradient-to-r from-[#1B5E3D] to-[#3D9A6A] text-white overflow-hidden">
+        <Card className="border-0 bg-gradient-to-r from-[#1A1A1A] to-[#2D2D2D] text-white overflow-hidden">
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
-              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center">
-                <HelpCircle className="h-7 w-7" />
+              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center">
+                <HelpCircle className="h-7 w-7 text-[#D4AF37]" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold">Centre d'aide</h1>
@@ -104,15 +101,15 @@ export function HelpPage() {
         <HelpSection
           icon={<BookOpen className="h-5 w-5" />}
           title="Qu'est-ce que Footix ?"
-          content="Footix est une application mobile dédiée à l'apprentissage et à la maîtrise de la déontologie. C'est l'outil d'aide à la préparation de l'examen du DEC et du CAFCAC. Elle vous accompagne dans votre apprentissage avec des quiz interactifs, des cours thématiques, un assistant IA et une communauté d'entraide."
+          content="Footix est une application dédiée aux passionnés de football. Testez et améliorez vos connaissances sur le football grâce à des quiz interactifs couvrant l'histoire, les compétitions, les joueurs, les clubs, les règles et les tactiques. Grimpez dans le classement et devenez le meilleur expert football !"
         />
 
         <HelpSection
-          icon={<MessageSquare className="h-5 w-5" />}
+          icon={<Zap className="h-5 w-5" />}
           title="Les Quiz"
           content={`**Comment fonctionnent les quiz ?**
 
-• Chaque quiz contient plusieurs questions à choix multiples
+• Chaque quiz contient plusieurs questions à choix unique ou multiple
 • Vous avez un temps limité pour répondre à chaque question
 • Un score minimum de 70% est requis pour réussir
 • Vous gagnez des étoiles en réussissant les quiz
@@ -120,19 +117,22 @@ export function HelpPage() {
 **Tentatives :**
 • Vous disposez de 3 tentatives par quiz
 • Les tentatives se rechargent automatiquement après 24h
-• Les membres Premium ont des tentatives illimitées`}
+• Vous pouvez acheter des tentatives supplémentaires avec vos étoiles`}
         />
 
         <HelpSection
           icon={<BookOpen className="h-5 w-5" />}
           title="Les Thèmes"
-          content={`Les quiz sont organisés par thèmes correspondant aux matières de la déontologie :
+          content={`Les quiz sont organisés par thèmes liés au football :
 
-• Déontologie de l'EC et du CAC
-• Réglementation professionnelle
+• Coupe du Monde
+• Ligue des Champions
+• Championnat d'Europe
+• Joueurs légendaires
+• Règles du jeu
 • Et bien d'autres...
 
-Chaque thème contient plusieurs quiz de difficulté progressive.`}
+Chaque thème contient plusieurs quiz de difficulté progressive (Facile, Moyen, Difficile).`}
         />
 
         <HelpSection
@@ -141,83 +141,37 @@ Chaque thème contient plusieurs quiz de difficulté progressive.`}
           content={`**Comment gagner des étoiles ?**
 
 • Réussissez un quiz pour la première fois : +3 étoiles
-• Score parfait (100%) : bonus d'étoiles
+• Score parfait (100%) : bonus d'étoiles supplémentaires
+• Les étoiles permettent de débloquer certains quiz avancés
 
 **Le classement :**
-• Comparez-vous aux autres utilisateurs
+• Comparez-vous aux autres joueurs
 • Le classement affiche les 100 meilleurs
 • Votre position est mise à jour en temps réel`}
         />
 
         <HelpSection
-          icon={<Bot className="h-5 w-5" />}
-          title="Le Chatbot IA"
-          content={`Notre assistant intelligent est là pour vous aider :
-
-• Posez des questions sur la Déontologie
-• Posez des questions sur le DEC
-• Obtenez des explications détaillées
-• Demandez des clarifications sur les quiz
-
-**Conseils d'utilisation :**
-• Soyez précis dans vos questions
-• Vous pouvez poser des questions en français
-• L'historique de conversation est sauvegardé`}
-        />
-
-        <HelpSection
           icon={<RefreshCw className="h-5 w-5" />}
-          title="La Révision"
+          title="Le Mode Révision"
           content={`Le mode Révision vous permet de :
 
-• Réviser des questions aléatoires de tous les thèmes
-• Renforcer vos connaissances globales
-• Préparer l'examen de manière transversale
+• Répondre à des questions aléatoires de tous les thèmes
+• Renforcer vos connaissances globales sur le football
+• Vous entraîner de manière transversale
 
-**Note :** Cette fonctionnalité est réservée aux membres Premium.`}
+C'est idéal pour tester votre culture football générale !`}
         />
 
         <HelpSection
-          icon={<Crown className="h-5 w-5" />}
-          title="L'abonnement Premium"
-          content={`Devenez Premium pour débloquer :
+          icon={<Trophy className="h-5 w-5" />}
+          title="Le Classement"
+          content={`Le classement vous permet de vous mesurer aux autres passionnés :
 
-• ✓ Accès à tous les quiz (y compris premium)
-• ✓ Tentatives illimitées
-• ✓ Mode Révision
-• ✓ Chatbot IA illimité
-• ✓ Pas de publicités
+• Gagnez des étoiles pour grimper dans le classement
+• Consultez le top 100 des meilleurs joueurs
+• Affichez votre rang et vos statistiques
 
-**Gestion de l'abonnement :**
-• Abonnement mensuel à 9,99€/mois
-• Annulation possible à tout moment
-• Gérez votre abonnement dans les paramètres`}
-        />
-
-        <HelpSection
-          icon={<Users className="h-5 w-5" />}
-          title="Le Forum"
-          content={`Échangez avec la communauté :
-
-• Posez vos questions
-• Partagez vos astuces
-• Aidez les autres candidats
-
-**Règles du forum :**
-• Restez respectueux et bienveillant
-• Évitez le hors-sujet
-• Signalez les contenus inappropriés`}
-        />
-
-        <HelpSection
-          icon={<FileText className="h-5 w-5" />}
-          title="Le Blog"
-          content={`Retrouvez des articles rédigés par des experts :
-
-• Actualités du DEC
-• Conseils de préparation
-• Analyses de sujets d'examen
-• Témoignages de candidats`}
+**Astuce :** Réussissez un maximum de quiz avec un score parfait pour accumuler le plus d'étoiles !`}
         />
 
         <HelpSection
@@ -227,8 +181,8 @@ Chaque thème contient plusieurs quiz de difficulté progressive.`}
 
 • Modifier vos informations personnelles
 • Changer votre photo de profil
-• Consulter vos statistiques
-• Gérer votre abonnement Premium`}
+• Consulter vos statistiques détaillées
+• Voir votre historique de quiz`}
         />
 
         <HelpSection
@@ -236,7 +190,7 @@ Chaque thème contient plusieurs quiz de difficulté progressive.`}
           title="Signaler un problème"
           content={`Vous rencontrez un bug ou un problème ?
 
-• Contactez-nous à : declearningcontact@gmail.com
+• Contactez-nous à : footixcontact@gmail.com
 • Décrivez le problème en détail
 • Joignez une capture d'écran si possible
 
@@ -246,9 +200,9 @@ Nous vous répondrons dans les plus brefs délais.`}
 
       {/* Contact Card */}
       <motion.div variants={item}>
-        <Card className="border-[#1B5E3D]/30 bg-gradient-to-r from-[#1B5E3D]/5 to-[#3D9A6A]/5">
+        <Card className="border-[#D4AF37]/30 bg-gradient-to-r from-[#D4AF37]/5 to-[#C0C0C0]/5">
           <CardContent className="pt-6 text-center">
-            <Mail className="h-10 w-10 text-[#1B5E3D] dark:text-[#3D9A6A] mx-auto mb-4" />
+            <Mail className="h-10 w-10 text-[#D4AF37] mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
               Besoin d'aide supplémentaire ?
             </h3>
@@ -256,7 +210,7 @@ Nous vous répondrons dans les plus brefs délais.`}
               Contactez notre équipe support
             </p>
             <Button variant="gradient">
-              declearningcontact@gmail.com
+              footixcontact@gmail.com
             </Button>
           </CardContent>
         </Card>

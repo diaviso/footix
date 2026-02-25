@@ -65,14 +65,14 @@ export function DashboardPage() {
       value: stats.themes.toString(),
       change: 'Déontologie comptable',
       icon: BookOpen,
-      color: 'bg-[#1B5E3D]',
+      color: 'bg-[#D4AF37]',
     },
     {
       title: 'Quiz complétés',
       value: stats.userQuizAttempts.toString(),
       change: `${stats.quizzes} quiz disponibles`,
       icon: HelpCircle,
-      color: 'bg-[#2D7A50]',
+      color: 'bg-[#B8960F]',
     },
     {
       title: 'Articles publiés',
@@ -86,7 +86,7 @@ export function DashboardPage() {
       value: stats.discussions.toString(),
       change: 'Forum actif',
       icon: MessageSquare,
-      color: 'bg-[#3D9A6A]',
+      color: 'bg-[#C0C0C0]',
     },
   ] : [];
 
@@ -94,7 +94,7 @@ export function DashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B5E3D] dark:border-[#3D9A6A] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37] dark:border-[#C0C0C0] mx-auto"></div>
           <p className="mt-4 text-[#5A7265] dark:text-[#8BA898]">Chargement...</p>
         </div>
       </div>
@@ -107,7 +107,7 @@ export function DashboardPage() {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#1B5E3D] via-[#144832] to-[#0D3321] p-8 text-white"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#D4AF37] via-[#A89030] to-[#0D3321] p-8 text-white"
       >
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -159,7 +159,7 @@ export function DashboardPage() {
                         {stat.title}
                       </p>
                       <p className="text-3xl font-bold mt-1 text-[#1A2E23] dark:text-[#E8F0EC]">{stat.value}</p>
-                      <p className="text-xs text-[#1B5E3D] dark:text-[#3D9A6A] mt-1">
+                      <p className="text-xs text-[#D4AF37] dark:text-[#C0C0C0] mt-1">
                         {stat.change}
                       </p>
                     </div>
@@ -190,7 +190,7 @@ export function DashboardPage() {
           <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg h-full bg-white dark:bg-[#141F1A]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#1A2E23] dark:text-[#E8F0EC]">
-                <Clock className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <Clock className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 Activité récente
               </CardTitle>
               <CardDescription className="text-[#5A7265] dark:text-[#8BA898]">Vos dernières actions sur la plateforme</CardDescription>
@@ -209,10 +209,10 @@ export function DashboardPage() {
                       <div
                         className={`flex h-10 w-10 items-center justify-center rounded-xl ${
                           activity.type === 'quiz'
-                            ? 'bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/20 text-[#1B5E3D] dark:text-[#3D9A6A]'
+                            ? 'bg-[#D4AF37]/10 dark:bg-[#C0C0C0]/20 text-[#D4AF37] dark:text-[#C0C0C0]'
                             : activity.type === 'article'
                             ? 'bg-[#F5A623]/10 dark:bg-[#F5A623]/20 text-[#F5A623]'
-                            : 'bg-[#2D7A50]/10 dark:bg-[#2D7A50]/20 text-[#2D7A50] dark:text-[#3D9A6A]'
+                            : 'bg-[#B8960F]/10 dark:bg-[#B8960F]/20 text-[#B8960F] dark:text-[#C0C0C0]'
                         }`}
                       >
                         {activity.type === 'quiz' ? (
@@ -228,7 +228,7 @@ export function DashboardPage() {
                         <p className="text-sm text-[#5A7265] dark:text-[#8BA898]">{activity.time}</p>
                       </div>
                       {activity.score && (
-                        <span className="text-sm font-semibold text-[#1B5E3D] dark:text-[#3D9A6A]">
+                        <span className="text-sm font-semibold text-[#D4AF37] dark:text-[#C0C0C0]">
                           {activity.score}
                         </span>
                       )}
@@ -253,7 +253,7 @@ export function DashboardPage() {
           <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg h-full bg-white dark:bg-[#141F1A]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#1A2E23] dark:text-[#E8F0EC]">
-                <BarChart3 className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <BarChart3 className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 Statistiques
               </CardTitle>
               <CardDescription className="text-[#5A7265] dark:text-[#8BA898]">Votre progression globale</CardDescription>
@@ -270,7 +270,7 @@ export function DashboardPage() {
                       initial={{ width: 0 }}
                       animate={{ width: `${progress?.quizSuccessRate || 0}%` }}
                       transition={{ delay: 0.5, duration: 1 }}
-                      className="h-full rounded-full bg-[#1B5E3D]"
+                      className="h-full rounded-full bg-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -284,7 +284,7 @@ export function DashboardPage() {
                       initial={{ width: 0 }}
                       animate={{ width: `${progress?.quizCompletionRate || 0}%` }}
                       transition={{ delay: 0.6, duration: 1 }}
-                      className="h-full rounded-full bg-[#2D7A50]"
+                      className="h-full rounded-full bg-[#B8960F]"
                     />
                   </div>
                 </div>
@@ -312,7 +312,7 @@ export function DashboardPage() {
                       initial={{ width: 0 }}
                       animate={{ width: `${progress?.forumParticipationRate || 0}%` }}
                       transition={{ delay: 0.8, duration: 1 }}
-                      className="h-full rounded-full bg-[#3D9A6A]"
+                      className="h-full rounded-full bg-[#C0C0C0]"
                     />
                   </div>
                 </div>

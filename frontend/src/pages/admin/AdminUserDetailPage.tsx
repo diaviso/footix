@@ -172,7 +172,7 @@ export default function AdminUserDetailPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <Loader2 className="h-10 w-10 animate-spin text-[#1B5E3D]" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#D4AF37]" />
       </div>
     );
   }
@@ -207,12 +207,12 @@ export default function AdminUserDetailPage() {
       {/* Profile Card */}
       <motion.div variants={item}>
         <Card className="border-2 border-slate-200 dark:border-slate-700 overflow-hidden">
-          <div className="bg-gradient-to-r from-[#1B5E3D] to-[#2D7A50] h-24" />
+          <div className="bg-gradient-to-r from-[#D4AF37] to-[#B8960F] h-24" />
           <CardContent className="relative pt-0 pb-6 px-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4 -mt-10">
               <Avatar className="h-20 w-20 border-4 border-white dark:border-slate-900 shadow-lg">
                 <AvatarImage src={getAvatarUrl(u.avatar)} />
-                <AvatarFallback className="bg-[#1B5E3D] text-white text-xl font-bold">
+                <AvatarFallback className="bg-[#D4AF37] text-white text-xl font-bold">
                   {u.firstName[0]}{u.lastName[0]}
                 </AvatarFallback>
               </Avatar>
@@ -251,42 +251,42 @@ export default function AdminUserDetailPage() {
         <Card className="text-center">
           <CardContent className="pt-4 pb-3">
             <Star className="h-5 w-5 text-amber-500 mx-auto mb-1" />
-            <p className="text-2xl font-bold text-[#1B5E3D]">{u.stars}</p>
+            <p className="text-2xl font-bold text-[#D4AF37]">{u.stars}</p>
             <p className="text-xs text-muted-foreground">Étoiles</p>
           </CardContent>
         </Card>
         <Card className="text-center">
           <CardContent className="pt-4 pb-3">
             <Target className="h-5 w-5 text-blue-500 mx-auto mb-1" />
-            <p className="text-2xl font-bold text-[#1B5E3D]">{a.quizAttemptCount}</p>
+            <p className="text-2xl font-bold text-[#D4AF37]">{a.quizAttemptCount}</p>
             <p className="text-xs text-muted-foreground">Quiz tentés</p>
           </CardContent>
         </Card>
         <Card className="text-center">
           <CardContent className="pt-4 pb-3">
             <TrendingUp className="h-5 w-5 text-emerald-500 mx-auto mb-1" />
-            <p className="text-2xl font-bold text-[#1B5E3D]">{a.avgScore}%</p>
+            <p className="text-2xl font-bold text-[#D4AF37]">{a.avgScore}%</p>
             <p className="text-xs text-muted-foreground">Score moyen</p>
           </CardContent>
         </Card>
         <Card className="text-center">
           <CardContent className="pt-4 pb-3">
             <Trophy className="h-5 w-5 text-amber-500 mx-auto mb-1" />
-            <p className="text-2xl font-bold text-[#1B5E3D]">{a.bestScore}%</p>
+            <p className="text-2xl font-bold text-[#D4AF37]">{a.bestScore}%</p>
             <p className="text-xs text-muted-foreground">Meilleur score</p>
           </CardContent>
         </Card>
         <Card className="text-center">
           <CardContent className="pt-4 pb-3">
             <MessageSquare className="h-5 w-5 text-purple-500 mx-auto mb-1" />
-            <p className="text-2xl font-bold text-[#1B5E3D]">{a.forumTopicCount}</p>
+            <p className="text-2xl font-bold text-[#D4AF37]">{a.forumTopicCount}</p>
             <p className="text-xs text-muted-foreground">Sujets forum</p>
           </CardContent>
         </Card>
         <Card className="text-center">
           <CardContent className="pt-4 pb-3">
             <Bot className="h-5 w-5 text-teal-500 mx-auto mb-1" />
-            <p className="text-2xl font-bold text-[#1B5E3D]">{a.chatConversationCount}</p>
+            <p className="text-2xl font-bold text-[#D4AF37]">{a.chatConversationCount}</p>
             <p className="text-xs text-muted-foreground">Conversations IA</p>
           </CardContent>
         </Card>
@@ -298,7 +298,7 @@ export default function AdminUserDetailPage() {
           <Card className="border-2 border-slate-200 dark:border-slate-700">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg">
-                <User className="h-5 w-5 text-[#1B5E3D]" />
+                <User className="h-5 w-5 text-[#D4AF37]" />
                 Informations détaillées
               </CardTitle>
             </CardHeader>
@@ -332,14 +332,14 @@ export default function AdminUserDetailPage() {
                 <div className="border-t pt-3 mt-3">
                   <p className="font-medium mb-2 flex items-center gap-1.5"><Bell className="h-4 w-4" /> Notifications</p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant={u.emailNotifications ? 'default' : 'outline'} className={cn('text-xs', u.emailNotifications && 'bg-[#1B5E3D]')}>
+                    <Badge variant={u.emailNotifications ? 'default' : 'outline'} className={cn('text-xs', u.emailNotifications && 'bg-[#D4AF37]')}>
                       {u.emailNotifications ? <Bell className="h-3 w-3 mr-1" /> : <BellOff className="h-3 w-3 mr-1" />}
                       Email {u.emailNotifications ? 'activé' : 'désactivé'}
                     </Badge>
-                    <Badge variant={u.pushNotifications ? 'default' : 'outline'} className={cn('text-xs', u.pushNotifications && 'bg-[#1B5E3D]')}>
+                    <Badge variant={u.pushNotifications ? 'default' : 'outline'} className={cn('text-xs', u.pushNotifications && 'bg-[#D4AF37]')}>
                       Push {u.pushNotifications ? 'activé' : 'désactivé'}
                     </Badge>
-                    <Badge variant={u.marketingEmails ? 'default' : 'outline'} className={cn('text-xs', u.marketingEmails && 'bg-[#1B5E3D]')}>
+                    <Badge variant={u.marketingEmails ? 'default' : 'outline'} className={cn('text-xs', u.marketingEmails && 'bg-[#D4AF37]')}>
                       Marketing {u.marketingEmails ? 'activé' : 'désactivé'}
                     </Badge>
                   </div>
@@ -355,7 +355,7 @@ export default function AdminUserDetailPage() {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-between text-lg">
                 <span className="flex items-center gap-2">
-                  <Target className="h-5 w-5 text-[#1B5E3D]" />
+                  <Target className="h-5 w-5 text-[#D4AF37]" />
                   Quiz récents
                 </span>
                 <Badge variant="secondary">{a.quizAttemptCount} total</Badge>
@@ -401,7 +401,7 @@ export default function AdminUserDetailPage() {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-between text-lg">
                 <span className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-[#1B5E3D]" />
+                  <MessageSquare className="h-5 w-5 text-[#D4AF37]" />
                   Activité Forum
                 </span>
                 <div className="flex gap-2">
@@ -443,7 +443,7 @@ export default function AdminUserDetailPage() {
           <Card className="border-2 border-slate-200 dark:border-slate-700">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg">
-                <CreditCard className="h-5 w-5 text-[#1B5E3D]" />
+                <CreditCard className="h-5 w-5 text-[#D4AF37]" />
                 Paiements
               </CardTitle>
             </CardHeader>
@@ -497,7 +497,7 @@ export default function AdminUserDetailPage() {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center justify-between text-lg">
                 <span className="flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-[#1B5E3D]" />
+                  <AlertTriangle className="h-5 w-5 text-[#D4AF37]" />
                   Retours
                 </span>
                 <Badge variant="secondary">{a.feedbackCount} total</Badge>
@@ -536,7 +536,7 @@ export default function AdminUserDetailPage() {
           <Card className="border-2 border-slate-200 dark:border-slate-700">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg">
-                <FileText className="h-5 w-5 text-[#1B5E3D]" />
+                <FileText className="h-5 w-5 text-[#D4AF37]" />
                 Résumé d'activité
               </CardTitle>
             </CardHeader>

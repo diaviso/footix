@@ -78,7 +78,7 @@ class TermsScreen extends StatelessWidget {
               '• **Droit à la portabilité** : recevoir vos données dans un format structuré\n'
               '• **Droit d\'opposition** : vous opposer au traitement de vos données\n'
               '• **Droit à la limitation** : limiter le traitement de vos données\n\n'
-              'Pour exercer ces droits, contactez-nous à : declearningcontact@gmail.com',
+              'Pour exercer ces droits, contactez-nous à : footixcontact@gmail.com',
               isDark,
             ),
             
@@ -110,32 +110,23 @@ class TermsScreen extends StatelessWidget {
             ),
             
             _buildSection(
-              '9. Abonnement Premium',
-              'L\'abonnement Premium est souscrit via les plateformes de paiement sécurisées (Google Play, App Store).\n\n'
-              '• Le renouvellement est automatique sauf annulation de votre part\n'
-              '• Vous pouvez annuler à tout moment depuis les paramètres de votre store\n'
-              '• Aucun remboursement n\'est effectué pour la période en cours',
-              isDark,
-            ),
-            
-            _buildSection(
-              '10. Propriété intellectuelle',
+              '9. Propriété intellectuelle',
               'Tous les contenus de l\'application (textes, quiz, images, logos) sont protégés par le droit d\'auteur. '
               'Toute reproduction ou utilisation non autorisée est interdite.',
               isDark,
             ),
             
             _buildSection(
-              '11. Modification des conditions',
+              '10. Modification des conditions',
               'Nous nous réservons le droit de modifier ces conditions à tout moment. '
               'Vous serez informé de toute modification substantielle par notification dans l\'application.',
               isDark,
             ),
             
             _buildSection(
-              '12. Contact et réclamations',
+              '11. Contact et réclamations',
               'Pour toute question ou réclamation concernant vos données personnelles :\n\n'
-              '**Email** : declearningcontact@gmail.com\n\n'
+              '**Email** : footixcontact@gmail.com\n\n'
               'Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de l\'Informatique et des Libertés) : www.cnil.fr',
               isDark,
             ),

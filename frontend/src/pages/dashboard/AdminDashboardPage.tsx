@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import {
   Users,
   HelpCircle,
-  FileText,
-  MessageSquare,
   TrendingUp,
   Star,
   Trophy,
@@ -20,9 +18,7 @@ interface AdminStats {
   totalUsers: number;
   totalQuizzes: number;
   totalAttempts: number;
-  totalArticles: number;
   totalTopics: number;
-  totalComments: number;
   globalSuccessRate: number;
   recentUsers: Array<{
     id: string;
@@ -97,7 +93,7 @@ export function AdminDashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1B5E3D] dark:border-[#3D9A6A] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37] dark:border-[#C0C0C0] mx-auto"></div>
           <p className="mt-4 text-[#5A7265] dark:text-[#8BA898]">Chargement...</p>
         </div>
       </div>
@@ -111,28 +107,14 @@ export function AdminDashboardPage() {
           value: stats.totalUsers.toString(),
           description: 'Utilisateurs inscrits',
           icon: Users,
-          color: 'bg-[#1B5E3D]',
+          color: 'bg-[#D4AF37]',
         },
         {
           title: 'Quiz',
           value: stats.totalQuizzes.toString(),
           description: `${stats.totalAttempts} tentatives`,
           icon: HelpCircle,
-          color: 'bg-[#2D7A50]',
-        },
-        {
-          title: 'Articles',
-          value: stats.totalArticles.toString(),
-          description: 'Articles publiés',
-          icon: FileText,
-          color: 'bg-[#F5A623]',
-        },
-        {
-          title: 'Forum',
-          value: stats.totalTopics.toString(),
-          description: `${stats.totalComments} commentaires`,
-          icon: MessageSquare,
-          color: 'bg-[#3D9A6A]',
+          color: 'bg-[#B8960F]',
         },
       ]
     : [];
@@ -148,7 +130,7 @@ export function AdminDashboardPage() {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0D3321] via-[#144832] to-[#1B5E3D] p-8 text-white"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0D3321] via-[#A89030] to-[#D4AF37] p-8 text-white"
       >
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="relative z-10">
@@ -228,7 +210,7 @@ export function AdminDashboardPage() {
           <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg h-full bg-white dark:bg-[#141F1A]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#1A2E23] dark:text-[#E8F0EC]">
-                <BarChart3 className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+                <BarChart3 className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
                 Activité des quiz (30 derniers jours)
               </CardTitle>
               <CardDescription className="text-[#5A7265] dark:text-[#8BA898]">Nombre de tentatives par jour</CardDescription>
@@ -239,7 +221,7 @@ export function AdminDashboardPage() {
                   {stats.attemptsByDay.slice(0, 30).reverse().map((day, index) => (
                     <div
                       key={index}
-                      className="flex-1 bg-gradient-to-t from-[#1B5E3D] to-[#3D9A6A] rounded-t transition-all hover:opacity-80"
+                      className="flex-1 bg-gradient-to-t from-[#D4AF37] to-[#C0C0C0] rounded-t transition-all hover:opacity-80"
                       style={{
                         height: `${(day.count / maxAttempts) * 100}%`,
                         minHeight: day.count > 0 ? '4px' : '0',
@@ -294,7 +276,7 @@ export function AdminDashboardPage() {
                             ? 'bg-[#9CA3AF]'
                             : index === 2
                             ? 'bg-[#CD7F32]'
-                            : 'bg-[#1B5E3D]/20 text-[#1B5E3D] dark:bg-[#3D9A6A]/20 dark:text-[#3D9A6A]'
+                            : 'bg-[#D4AF37]/20 text-[#D4AF37] dark:bg-[#C0C0C0]/20 dark:text-[#C0C0C0]'
                         }`}
                       >
                         {index + 1}
@@ -331,7 +313,7 @@ export function AdminDashboardPage() {
         <Card className="border border-[#D1DDD6] dark:border-[#2D3F35] shadow-lg bg-white dark:bg-[#141F1A]">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-[#1A2E23] dark:text-[#E8F0EC]">
-              <UserPlus className="h-5 w-5 text-[#1B5E3D] dark:text-[#3D9A6A]" />
+              <UserPlus className="h-5 w-5 text-[#D4AF37] dark:text-[#C0C0C0]" />
               Nouveaux utilisateurs
             </CardTitle>
             <CardDescription className="text-[#5A7265] dark:text-[#8BA898]">Dernières inscriptions</CardDescription>

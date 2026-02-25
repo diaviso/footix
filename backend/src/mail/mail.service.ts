@@ -24,18 +24,18 @@ export class MailService {
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); padding: 32px 20px; text-align: center;">
+          <div style="background: linear-gradient(135deg, #D4AF37 0%, #B8960F 100%); padding: 32px 20px; text-align: center;">
             <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">Footix</h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 6px 0 0 0;">Préparation au Diplôme d'Expertise Comptable</p>
           </div>
           <!-- Body -->
           <div style="padding: 36px 32px;">
-            <h2 style="color: #1B5E3D; font-size: 22px; margin: 0 0 16px 0;">Vérification de votre adresse email</h2>
+            <h2 style="color: #D4AF37; font-size: 22px; margin: 0 0 16px 0;">Vérification de votre adresse email</h2>
             <p style="color: #4b5563; font-size: 15px; line-height: 1.6; margin: 0 0 24px 0;">
               Bienvenue sur Footix ! Pour finaliser votre inscription, veuillez utiliser le code de vérification ci-dessous :
             </p>
             <div style="background-color: #f0f7f3; padding: 24px; text-align: center; border-radius: 8px; margin: 24px 0; border: 1px solid #d4e8dc;">
-              <span style="font-size: 36px; font-weight: bold; color: #1B5E3D; letter-spacing: 6px;">${code}</span>
+              <span style="font-size: 36px; font-weight: bold; color: #D4AF37; letter-spacing: 6px;">${code}</span>
             </div>
             <div style="background-color: #f0f7f3; border-left: 4px solid #D4A843; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 24px 0;">
               <p style="color: #5A7265; font-size: 13px; margin: 0;">
@@ -61,18 +61,18 @@ export class MailService {
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); padding: 32px 20px; text-align: center;">
+          <div style="background: linear-gradient(135deg, #D4AF37 0%, #B8960F 100%); padding: 32px 20px; text-align: center;">
             <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">Footix</h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 6px 0 0 0;">Préparation au Diplôme d'Expertise Comptable</p>
           </div>
           <!-- Body -->
           <div style="padding: 36px 32px;">
-            <h2 style="color: #1B5E3D; font-size: 22px; margin: 0 0 16px 0;">Réinitialisation de votre mot de passe</h2>
+            <h2 style="color: #D4AF37; font-size: 22px; margin: 0 0 16px 0;">Réinitialisation de votre mot de passe</h2>
             <p style="color: #4b5563; font-size: 15px; line-height: 1.6; margin: 0 0 24px 0;">
               Vous avez demandé la réinitialisation de votre mot de passe. Cliquez sur le bouton ci-dessous pour créer un nouveau mot de passe :
             </p>
             <div style="text-align: center; margin: 32px 0;">
-              <a href="${resetLink}" style="display: inline-block; background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); color: #ffffff; padding: 14px 36px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 3px 12px rgba(27,94,61,0.3);">
+              <a href="${resetLink}" style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #B8960F 100%); color: #ffffff; padding: 14px 36px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 3px 12px rgba(27,94,61,0.3);">
                 Réinitialiser mon mot de passe
               </a>
             </div>
@@ -83,7 +83,7 @@ export class MailService {
             </div>
             <p style="color: #6b7280; font-size: 13px; line-height: 1.5; margin: 20px 0 0 0;">
               Si le bouton ne fonctionne pas, copiez et collez ce lien dans votre navigateur :<br>
-              <a href="${resetLink}" style="color: #1B5E3D; word-break: break-all; font-size: 12px;">${resetLink}</a>
+              <a href="${resetLink}" style="color: #D4AF37; word-break: break-all; font-size: 12px;">${resetLink}</a>
             </p>
           </div>
           <!-- Footer -->
@@ -124,7 +124,7 @@ export class MailService {
     const wrappedHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #1B5E3D; margin: 0;">Footix</h1>
+          <h1 style="color: #D4AF37; margin: 0;">Footix</h1>
           <p style="color: #6b7280; font-size: 14px; margin-top: 5px;">Préparation au Diplôme d'Expertise Comptable</p>
         </div>
         <div style="color: #1f2937; font-size: 16px; line-height: 1.6;">
@@ -173,13 +173,13 @@ export class MailService {
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #1B5E3D 0%, #2D7A50 100%); padding: 32px 20px; text-align: center;">
+          <div style="background: linear-gradient(135deg, #D4AF37 0%, #B8960F 100%); padding: 32px 20px; text-align: center;">
             <h1 style="color: #D4A843; font-size: 28px; margin: 0; font-weight: 700; letter-spacing: 1px;">Footix</h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 13px; margin: 6px 0 0 0;">Préparation au Diplôme d'Expertise Comptable</p>
           </div>
           <!-- Body -->
           <div style="padding: 36px 32px;">
-            <h2 style="color: #1B5E3D; font-size: 22px; margin: 0 0 16px 0;">Bonjour ${firstName},</h2>
+            <h2 style="color: #D4AF37; font-size: 22px; margin: 0 0 16px 0;">Bonjour ${firstName},</h2>
             <p style="color: #4b5563; font-size: 15px; line-height: 1.6; margin: 0 0 24px 0;">
               L'équipe Footix a répondu à votre <strong>${feedbackType.toLowerCase()}</strong>.
             </p>
@@ -191,8 +191,8 @@ export class MailService {
             </div>
 
             <!-- Admin response -->
-            <div style="background-color: #f0f7f3; border-left: 4px solid #1B5E3D; padding: 16px; border-radius: 0 8px 8px 0; margin: 0 0 24px 0;">
-              <p style="color: #1B5E3D; font-size: 12px; font-weight: 600; margin: 0 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px;">Réponse de l'équipe</p>
+            <div style="background-color: #f0f7f3; border-left: 4px solid #D4AF37; padding: 16px; border-radius: 0 8px 8px 0; margin: 0 0 24px 0;">
+              <p style="color: #D4AF37; font-size: 12px; font-weight: 600; margin: 0 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px;">Réponse de l'équipe</p>
               <p style="color: #1A2E23; font-size: 14px; line-height: 1.5; margin: 0; white-space: pre-line;">${adminResponse}</p>
             </div>
 

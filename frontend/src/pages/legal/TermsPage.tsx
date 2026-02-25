@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Mail, Lock, Database, FileText, CreditCard, Scale, AlertCircle } from 'lucide-react';
+import { Shield, Mail, Lock, Database, FileText, Scale, AlertCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const container = {
@@ -25,7 +25,7 @@ export function TermsPage() {
     >
       {/* Header */}
       <motion.div variants={item} className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1B5E3D] to-[#3D9A6A] mb-4">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#C0C0C0] mb-4">
           <Scale className="h-8 w-8 text-white" />
         </div>
         <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
@@ -38,10 +38,10 @@ export function TermsPage() {
 
       {/* Introduction */}
       <motion.div variants={item}>
-        <Card className="border-[#1B5E3D]/20 bg-[#1B5E3D]/5 dark:border-[#3D9A6A]/20 dark:bg-[#3D9A6A]/5">
+        <Card className="border-[#D4AF37]/20 bg-[#D4AF37]/5 dark:border-[#D4AF37]/20 dark:bg-[#D4AF37]/5">
           <CardContent className="pt-6">
             <div className="flex gap-4">
-              <Shield className="h-6 w-6 text-[#1B5E3D] dark:text-[#3D9A6A] flex-shrink-0 mt-1" />
+              <Shield className="h-6 w-6 text-[#D4AF37] flex-shrink-0 mt-1" />
               <div>
                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
                   Bienvenue sur Footix
@@ -61,7 +61,7 @@ export function TermsPage() {
         <Section
           icon={<FileText className="h-5 w-5" />}
           title="1. Objet de l'application"
-          content="Footix est une application éducative destinée à l'apprentissage et à la maîtrise de la déontologie de l'EC et du CAC. C'est l'outil d'aide à la préparation du DEC et du CAFCAC. Elle propose des quiz, des cours thématiques, un chatbot d'assistance et un forum communautaire pour faciliter votre apprentissage."
+          content="Footix est une application dédiée aux passionnés de football. Elle propose des quiz interactifs couvrant l'histoire du football, les compétitions, les joueurs, les clubs, les règles et les tactiques. Testez vos connaissances, grimpez dans le classement et devenez le meilleur expert football !"
         />
       </motion.div>
 
@@ -121,7 +121,7 @@ Les données de connexion et logs techniques sont conservés pendant 1 an.`}
 • **Droit d'opposition** : vous opposer au traitement de vos données
 • **Droit à la limitation** : limiter le traitement de vos données
 
-Pour exercer ces droits, contactez-nous à : declearningcontact@gmail.com`}
+Pour exercer ces droits, contactez-nous à : footixcontact@gmail.com`}
         />
       </motion.div>
 
@@ -154,20 +154,8 @@ Tout prestataire est soumis à des obligations de confidentialité strictes.`}
 
       <motion.div variants={item}>
         <Section
-          icon={<CreditCard className="h-5 w-5" />}
-          title="8. Abonnement Premium"
-          content={`L'abonnement Premium est souscrit via les plateformes de paiement sécurisées.
-
-• Le renouvellement est automatique sauf annulation de votre part
-• Vous pouvez annuler à tout moment depuis les paramètres
-• Aucun remboursement n'est effectué pour la période en cours`}
-        />
-      </motion.div>
-
-      <motion.div variants={item}>
-        <Section
           icon={<FileText className="h-5 w-5" />}
-          title="9. Propriété intellectuelle"
+          title="8. Propriété intellectuelle"
           content="Tous les contenus de l'application (textes, quiz, images, logos) sont protégés par le droit d'auteur. Toute reproduction ou utilisation non autorisée est interdite."
         />
       </motion.div>
@@ -175,19 +163,19 @@ Tout prestataire est soumis à des obligations de confidentialité strictes.`}
       <motion.div variants={item}>
         <Section
           icon={<Mail className="h-5 w-5" />}
-          title="10. Contact et réclamations"
+          title="9. Contact et réclamations"
           content={`Pour toute question ou réclamation concernant vos données personnelles :
 
-**Email** : declearningcontact@gmail.com\n\nVous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) : www.cnil.fr`}
+**Email** : footixcontact@gmail.com\n\nVous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) : www.cnil.fr`}
         />
       </motion.div>
 
       {/* Footer notice */}
       <motion.div variants={item}>
-        <Card className="border-[#1B5E3D]/30 bg-gradient-to-r from-[#1B5E3D]/10 to-[#3D9A6A]/10">
+        <Card className="border-[#D4AF37]/30 bg-gradient-to-r from-[#D4AF37]/10 to-[#C0C0C0]/10">
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1B5E3D] flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center">
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <p className="text-sm text-slate-700 dark:text-slate-300">
@@ -206,7 +194,7 @@ function Section({ icon, title, content }: { icon: React.ReactNode; title: strin
     <Card className="border-slate-200 dark:border-slate-700">
       <CardContent className="pt-6">
         <div className="flex gap-4">
-          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#1B5E3D]/10 dark:bg-[#3D9A6A]/20 flex items-center justify-center text-[#1B5E3D] dark:text-[#3D9A6A]">
+          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#D4AF37]/10 dark:bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]">
             {icon}
           </div>
           <div className="flex-1">
