@@ -53,6 +53,7 @@ mobile/ios/.symlinks/
 
 # Prisma
 backend/prisma/migrations/
+backend/src/generated/
 
 # Misc
 *.log
