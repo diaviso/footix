@@ -27,3 +27,7 @@ final leaderboardServiceProvider = Provider<LeaderboardService>((ref) {
 final dashboardServiceProvider = Provider<DashboardService>((ref) {
   return DashboardService(ref.watch(apiClientProvider));
 });
+
+final duelServiceProvider = Provider<DuelService>((ref) {
+  return DuelService(ref.watch(apiClientProvider));
+});

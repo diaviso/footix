@@ -410,6 +410,12 @@ class _AppDrawer extends ConsumerWidget {
                 const Divider(height: 16, indent: 16, endIndent: 16),
                 _DrawerSection(title: 'Communauté'),
                 _DrawerItem(
+                  icon: Icons.sports_mma_rounded,
+                  label: 'Duels',
+                  isActive: currentLocation.startsWith(AppRoutes.duels),
+                  onTap: () => _navigate(context, AppRoutes.duels),
+                ),
+                _DrawerItem(
                   icon: Icons.emoji_events_rounded,
                   label: 'Classement',
                   isActive: currentLocation.startsWith(AppRoutes.leaderboard),

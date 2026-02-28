@@ -26,6 +26,7 @@ import AdminEmailPage from '@/pages/admin/AdminEmailPage';
 import { TermsPage } from '@/pages/legal/TermsPage';
 import { HelpPage } from '@/pages/legal/HelpPage';
 import AdminUserDetailPage from '@/pages/admin/AdminUserDetailPage';
+import { DuelsPage } from '@/pages/duels/DuelsPage';
 import { useAuthStore } from '@/store/auth';
 import './index.css';
 
@@ -94,6 +95,7 @@ function App() {
             <Route path="/quizzes" element={<QuizzesPage />} />
             <Route path="/quizzes/:id" element={<QuizDetailPage />} />
             <Route path="/revision" element={<RevisionQuizPage />} />
+            <Route path="/duels" element={<DuelsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/leaderboard" element={<LeaderboardPage />} />

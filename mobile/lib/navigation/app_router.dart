@@ -26,6 +26,12 @@ import '../features/history/screens/history_screen.dart';
 import '../features/settings/screens/settings_screen.dart';
 import '../features/legal/screens/terms_screen.dart';
 import '../features/legal/screens/help_screen.dart';
+import '../features/duels/screens/duels_screen.dart';
+import '../features/duels/screens/duel_create_screen.dart';
+import '../features/duels/screens/duel_join_screen.dart';
+import '../features/duels/screens/duel_lobby_screen.dart';
+import '../features/duels/screens/duel_play_screen.dart';
+import '../features/duels/screens/duel_results_screen.dart';
 
 /// Route names
 class AppRoutes {
@@ -53,6 +59,14 @@ class AppRoutes {
   static const String settings = '/settings';
   static const String terms = '/terms';
   static const String help = '/help';
+
+  // Duels
+  static const String duels = '/duels';
+  static const String duelCreate = '/duels/create';
+  static const String duelJoin = '/duels/join';
+  static const String duelLobby = '/duels/lobby';
+  static const String duelPlay = '/duels/play';
+  static const String duelResults = '/duels/results';
 }
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -210,6 +224,12 @@ final routerProvider = Provider<GoRouter>((ref) {
               child: SettingsScreen(),
             ),
           ),
+          GoRoute(
+            path: AppRoutes.duels,
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: DuelsScreen(),
+            ),
+          ),
         ],
       ),
 
@@ -244,6 +264,31 @@ final routerProvider = Provider<GoRouter>((ref) {
         parentNavigatorKey: _rootNavigatorKey,
         path: AppRoutes.help,
         pageBuilder: (context, state) => _buildTransitionPage(state, const HelpScreen()),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: AppRoutes.duelCreate,
+        pageBuilder: (context, state) => _buildTransitionPage(state, const DuelCreateScreen()),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: AppRoutes.duelJoin,
+        pageBuilder: (context, state) => _buildTransitionPage(state, const DuelJoinScreen()),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: AppRoutes.duelLobby,
+        pageBuilder: (context, state) => _buildTransitionPage(state, const DuelLobbyScreen()),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: AppRoutes.duelPlay,
+        pageBuilder: (context, state) => _buildTransitionPage(state, const DuelPlayScreen()),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: AppRoutes.duelResults,
+        pageBuilder: (context, state) => _buildTransitionPage(state, const DuelResultsScreen()),
       ),
     ],
   );

@@ -13,6 +13,7 @@ import { UploadModule } from './upload/upload.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { UsersModule } from './users/users.module';
 import { LeaderboardModule } from './leaderboard/leaderboard.module';
+import { DuelsModule } from './duels/duels.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { LeaderboardModule } from './leaderboard/leaderboard.module';
     UploadModule,
     DashboardModule,
     LeaderboardModule,
+    DuelsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -19,6 +19,21 @@ enum QuizDifficulty {
   DIFFICILE
 }
 
+enum DuelDifficulty {
+  FACILE
+  MOYEN
+  DIFFICILE
+  ALEATOIRE
+}
+
+enum DuelStatus {
+  WAITING    // Waiting for participants
+  READY      // Full, waiting for creator to launch
+  PLAYING    // In progress
+  FINISHED   // Completed
+  CANCELLED  // Cancelled or expired
+}
+
 enum QuestionType {
   QCM
   QCU
@@ -52,6 +67,8 @@ model User {
   quizAttempts      QuizAttempt[]
   quizExtraAttempts QuizExtraAttempt[]
   emailHistory      EmailHistory[]
+  createdDuels      Duel[]
+  duelParticipations DuelParticipant[]
 
   @@map("users")
 }
@@ -187,5 +204,45 @@ model EmailHistory {
   sentBy User @relation(fields: [sentById], references: [id], onDelete: Cascade)
 
   @@map("email_history")
+}
+
+model Duel {
+  id              String         @id @default(uuid())
+  code            String         @unique
+  creatorId       String
+  maxParticipants Int            // 2, 3 or 4
+  difficulty      DuelDifficulty
+  starsCost       Int            // Stars each participant must wager
+  status          DuelStatus     @default(WAITING)
+  questionIds     String         @db.Text // JSON array of question IDs (set at launch)
+  startedAt       DateTime?
+  finishedAt      DateTime?
+  expiresAt       DateTime       // Auto-cancel if not launched within 30min
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  creator      User              @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  participants DuelParticipant[]
+
+  @@map("duels")
+}
+
+model DuelParticipant {
+  id            String    @id @default(uuid())
+  duelId        String
+  userId        String
+  answers       String?   @db.Text // JSON: { questionId: selectedOptionIds[] }
+  score         Int       @default(0)
+  correctCount  Int       @default(0)
+  finishedAt    DateTime?
+  starsWon      Int       @default(0)
+  rank          Int?
+  joinedAt      DateTime  @default(now())
+
+  duel Duel @relation(fields: [duelId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([duelId, userId])
+  @@map("duel_participants")
 }
 
